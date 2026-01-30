@@ -1,11 +1,18 @@
 <script lang="ts">
-	import { Link, Navbar, Select } from "@fefade-ui/svelte"
+	import {
+		Link,
+		Navbar,
+		Select,
+		Separator,
+		useMediaQuery
+	} from "@fefade-ui/svelte"
 	import { m } from "$lib/paraglide/messages.js"
 	import { getLocale, setLocale, type Locale } from "$lib/paraglide/runtime"
 	import favicon from "$lib/assets/favicon.ico"
 	import { Constants } from "@fefade-ui/core"
 
 	const locale = getLocale()
+	const isMd = useMediaQuery("max-width", "md")
 </script>
 
 {#snippet logo()}
@@ -26,9 +33,12 @@
 {/snippet}
 
 {#snippet translationSelector()}
-	<small title="language" class="muted">
-		{m["common.language_label"]()}:
-	</small>
+	{#if !isMd.value}
+		<small title="language" class="muted">
+			{m["common.language_label"]()}:
+		</small>
+	{/if}
+
 	<Select
 		style="min-height: 0;"
 		title="language selection"
@@ -71,6 +81,22 @@
 		gap: 0.5em;
 		"
 	>
+		{#if !isMd.value}
+			<Link href="mailto:support@fefade.com">
+				<i class="fa-solid fa-envelope"></i>
+			</Link>
+			<Link
+				href="https://play.google.com/store/apps/dev?id=7701571155946352525"
+				target="_blank"
+			>
+				<i class="fa-brands fa-google-play"></i>
+			</Link>
+			<Link href="https://github.com/fefade" target="_blank">
+				<i class="fa-brands fa-github"></i>
+			</Link>
+			<Separator orientation="vertical" style="height: 40px;" />
+		{/if}
+
 		{@render translationSelector?.()}
 	</div>
 </Navbar>
