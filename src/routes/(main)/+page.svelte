@@ -2,9 +2,12 @@
 	import { m } from "$lib/paraglide/messages.js"
 	import { getLocale } from "$lib/paraglide/runtime.js"
 	import { Button, Text } from "@fefade-ui/svelte"
-	import video from "$lib/assets/video.mp4"
+	import videoFile from "$lib/assets/video.mp4"
+	import { onMount } from "svelte"
 
 	let { data } = $props()
+
+	let videoEl: HTMLVideoElement
 
 	const seoData = {
 		["pt-br"]: {
@@ -22,6 +25,10 @@
 				"software development, custom software, app development, web development, ui library, fefade, technology, innovation, digital transformation"
 		}
 	}[getLocale()]
+
+	onMount(() => {
+		videoEl.playbackRate = 0.75
+	})
 </script>
 
 <svelte:head>
@@ -31,8 +38,8 @@
 </svelte:head>
 
 <section class="hero">
-	<video autoplay muted playsinline loop class="hero-video">
-		<source src={video} type="video/mp4" />
+	<video bind:this={videoEl} autoplay muted playsinline loop class="hero-video">
+		<source src={videoFile} type="video/mp4" />
 	</video>
 
 	<div class="hero-overlay"></div>
