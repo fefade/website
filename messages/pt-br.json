@@ -1,0 +1,10 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"common": {
+		"cta": {
+			"sign_in": "Entrar",
+			"go_back": "Voltar"
+		},
+		"language_label": "Idioma"
+	}
+}
