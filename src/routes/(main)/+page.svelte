@@ -27,7 +27,12 @@
 	}[getLocale()]
 
 	onMount(() => {
-		videoEl.playbackRate = 0.75
+		videoEl.addEventListener("timeupdate", () => {
+			if (videoEl.currentTime >= 7.6) {
+				videoEl.style.opacity = "0.3"
+				videoEl.pause()
+			}
+		})
 	})
 </script>
 
@@ -38,7 +43,7 @@
 </svelte:head>
 
 <section class="hero">
-	<video bind:this={videoEl} autoplay muted playsinline loop class="hero-video">
+	<video bind:this={videoEl} autoplay muted playsinline class="hero-video">
 		<source src={videoFile} type="video/mp4" />
 	</video>
 
