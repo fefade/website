@@ -87,6 +87,7 @@
 		height: 100%;
 		object-fit: cover;
 		z-index: -2;
+		transition: opacity 0.5s ease-out;
 	}
 
 	.hero-overlay {
