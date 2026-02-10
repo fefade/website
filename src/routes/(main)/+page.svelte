@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { m } from "$lib/paraglide/messages.js"
 	import { getLocale } from "$lib/paraglide/runtime.js"
-	import { Button, Text } from "@fefade-ui/svelte"
+	import { Button } from "@fefade-ui/svelte"
 	import videoFile from "$lib/assets/video.mp4"
 	import { onMount } from "svelte"
 
@@ -18,11 +18,40 @@
 				"desenvolvimento de software, software sob medida, fábrica de software, fefade, tecnologia, inovação, transformação digital"
 		},
 		en: {
-			title: "The Digital Impulse to Go Further",
+			title: "The digital impulse to go further",
 			description:
 				"We build the technological foundation your business needs to grow.",
 			keywords:
 				"software development, custom software, app development, web development, ui library, fefade, technology, innovation, digital transformation"
+		}
+	}[getLocale()]
+
+	const heroData = {
+		"pt-br": {
+			title: {
+				pre: "O",
+				highlight: "impulso",
+				post: "digital para ir mais longe"
+			},
+			description: {
+				pre: "Construímos a ",
+				highlight: "base tecnológica",
+				middle: " que o seu negócio precisa para ",
+				post: "crescer."
+			}
+		},
+		en: {
+			title: {
+				pre: "The digital",
+				highlight: "impulse",
+				post: "to go further"
+			},
+			description: {
+				pre: "We build the ",
+				highlight: "technological foundation",
+				middle: " your business needs to ",
+				post: "grow."
+			}
 		}
 	}[getLocale()]
 
@@ -50,20 +79,66 @@
 	<div class="hero-overlay"></div>
 
 	<div class="hero-content">
-		<Text
-			as="h1"
+		<span
+			class="muted"
 			style="
-			color: white;
-			text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.4);
-			font-weight: 800;
-			font-size: 48px;
+			font-size: 1.6rem;
+			font-weight: 400;
+			letter-spacing: 3px;
+			text-transform: uppercase;
 			"
 		>
-			{seoData.title}
-		</Text>
-		<Text as="p" class="muted" style="font-size: 18px;">
-			{seoData.description}
-		</Text>
+			{heroData.title.pre}
+		</span>
+
+		<h1
+			style="
+			font-size: 3.8rem;
+			font-weight: 800;
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			background: linear-gradient(180deg, #ffffff 0%, #bdbdbd 100%);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			margin: 0.5rem 0;
+			"
+		>
+			{heroData.title.highlight}
+		</h1>
+
+		<span
+			style="
+			font-size: 1.6rem;
+			font-weight: 300;
+			color: #cfcfcf;
+			"
+		>
+			{heroData.title.post}
+		</span>
+
+		<p
+			class="muted"
+			style="
+			font-size: 1.4rem;
+			font-weight: 400;
+			"
+		>
+			{heroData.description.pre}
+			<span
+				style="
+				font-weight: 600;
+				background: linear-gradient(180deg, #ffffff 0%, #bdbdbd 100%);
+				-webkit-background-clip: text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				"
+			>
+				{heroData.description.highlight}
+			</span>
+			{heroData.description.middle}
+			<span class="post">{heroData.description.post}</span>
+		</p>
 		<Button size="lg">{m["common.cta.sign_in"]()}</Button>
 	</div>
 </section>
@@ -103,11 +178,16 @@
 	.hero-content {
 		text-align: center;
 		z-index: 1;
+		max-width: 325px;
 	}
 
 	@media screen and (max-width: 768px) {
 		.hero-content {
 			width: 80%;
+		}
+
+		.hero-content h1 {
+			font-size: 2.8rem !important;
 		}
 	}
 </style>
