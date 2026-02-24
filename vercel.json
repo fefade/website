@@ -4,6 +4,11 @@
 			"source": "/files",
 			"destination": "https://www.mediafire.com/folder/ng6g68a6p5ds4",
 			"permanent": true
+		},
+		{
+			"source": "/menu",
+			"destination": "https://menu.dxdns.dev",
+			"permanent": true
 		}
 	]
 }
