@@ -6,5 +6,164 @@
 			"go_back": "Go Back"
 		},
 		"language_label": "Language"
+	},
+	"pages": {
+		"cookie_policy": {
+			"title": "Cookie Policy",
+			"introduction": "This Cookie Policy explains how we use cookies and similar technologies to recognize you when you visit our website. It explains what these technologies are, why we use them, and your rights to control their use.",
+			"whatAreCookies": {
+				"title": "What are cookies?",
+				"description": "Cookies are small text files that are stored on your computer or mobile device when you visit a website. They help make your online experience more efficient and personalized."
+			},
+			"whyWeUseCookies": {
+				"title": "Why do we use cookies?",
+				"items": {
+					"essential": "Essential cookies: Necessary for the website to function properly.",
+					"performance": "Performance cookies: Used to analyze how visitors use the site, allowing continuous improvements.",
+					"functionality": "Functionality cookies: Allow us to remember your preferences and personalize your experience.",
+					"marketing": "Marketing cookies: Used to deliver relevant advertising and measure its effectiveness."
+				}
+			},
+			"controlCookies": {
+				"title": "How can you control cookies?",
+				"description": "You can set your browser to refuse cookies or to alert you when cookies are being sent. However, if you disable cookies, some parts of the site may not function properly."
+			},
+			"changes": {
+				"title": "Changes to this policy",
+				"description": "We may update this Cookie Policy from time to time. We recommend that you review this page periodically to stay informed about how we are using cookies."
+			},
+			"contact": {
+				"title": "Contact",
+				"description": "If you have any questions about our Cookie Policy, please contact us at:",
+				"email": "support@fefade.com"
+			}
+		},
+		"privacy_policy": {
+			"title": "Privacy Policy",
+			"introduction": "This Privacy Policy complies with the Brazilian General Data Protection Law (LGPD - Law No. 13.709/2018) and describes how we collect, use, store, share, and protect your personal data when you use our website and services.",
+			"whatAreCookies": {
+				"title": "What are cookies?",
+				"description": "Cookies are small text files that are stored on your computer or mobile device when you visit a website. They help make your online experience more efficient and personalized."
+			},
+			"whyWeUseCookies": {
+				"title": "Why do we use cookies?",
+				"items": {
+					"essential": "Essential cookies: Necessary for the website to function properly.",
+					"performance": "Performance cookies: Used to analyze how visitors use the site, allowing continuous improvements.",
+					"functionality": "Functionality cookies: Allow us to remember your preferences and personalize your experience.",
+					"marketing": "Marketing cookies: Used to deliver relevant advertising and measure its effectiveness."
+				}
+			},
+			"controlCookies": {
+				"title": "How can you control cookies?",
+				"description": "You can set your browser to refuse cookies or to alert you when cookies are being sent. However, if you disable cookies, some parts of the site may not function properly."
+			},
+			"changes": {
+				"title": "Policy updates",
+				"description": "This Privacy Policy may be updated periodically to reflect legal changes or changes in our services. We recommend reviewing this page regularly."
+			},
+			"contact": {
+				"title": "Data Protection Officer (DPO)",
+				"description": "If you have any questions, requests, or wish to exercise your rights related to your personal data, please contact our Data Protection Officer (DPO):",
+				"email": "dpo@fefade.com"
+			},
+			"legalBasis": {
+				"title": "Legal basis for data processing",
+				"description": "We process your personal data based on the legal grounds established by the LGPD, such as consent, contract execution, legal obligations, and legitimate interest — always respecting your rights and fundamental freedoms."
+			},
+			"informationWeCollect": {
+				"title": "What personal data do we collect?",
+				"items": {
+					"identification": "Identification data: name, email, phone number, and other data voluntarily provided by you.",
+					"navigation": "Browsing data: IP address, date and time of access, approximate location, browser type, device, and accessed pages.",
+					"usage": "Usage data: interactions with website features and browsing behavior."
+				}
+			},
+			"purposeOfUse": {
+				"title": "Why do we use your data?",
+				"items": {
+					"service": "To provide and improve our services.",
+					"communication": "To send communications, notifications, and user support.",
+					"legal": "To comply with legal and regulatory obligations.",
+					"security": "To ensure site security, prevent fraud, and protect rights."
+				}
+			},
+			"dataSharing": {
+				"title": "Data sharing",
+				"description": "Your data may be shared with third parties only when necessary to provide our services, fulfill legal obligations, or with trusted partners operating under confidentiality and security agreements consistent with this policy. We do not sell your personal data."
+			},
+			"dataRetention": {
+				"title": "Data retention period",
+				"description": "We retain your data only as long as necessary to fulfill the purposes for which it was collected, unless a different period is required by legal or regulatory obligations."
+			},
+			"yourRights": {
+				"title": "Your rights under LGPD",
+				"items": {
+					"confirmation": "Confirm whether we process your data.",
+					"access": "Access your personal data.",
+					"correction": "Request correction of incomplete, inaccurate, or outdated data.",
+					"anonymization": "Request anonymization, blocking, or deletion of unnecessary or excessive data.",
+					"portability": "Request data portability to another service provider.",
+					"deletion": "Request deletion of data processed with your consent.",
+					"information": "Request information about data sharing with third parties.",
+					"consent": "Withdraw consent where applicable."
+				}
+			},
+			"dataSecurity": {
+				"title": "Information security",
+				"description": "We adopt technical and administrative measures to protect your personal data from unauthorized access, loss, alteration, or destruction. However, no system is completely secure, so we encourage users to adopt good security practices."
+			}
+		},
+		"terms_of_use": {
+			"title": "Terms of Use",
+			"introduction": "These Terms of Use establish the rules for accessing and using our website and services. By continuing to use them, you agree to the conditions described below.",
+			"userResponsibilities": {
+				"title": "User responsibilities",
+				"items": {
+					"accuracy": "Provide accurate and updated information when requested.",
+					"lawfulUse": "Use the services in compliance with applicable laws and regulations.",
+					"accountSecurity": "Keep login credentials confidential and do not share them with third parties.",
+					"respect": "Respect other users and avoid abusive, discriminatory, or harmful behavior."
+				}
+			},
+			"prohibitedUses": {
+				"title": "Prohibited uses",
+				"items": {
+					"illegal": "Use the website for illegal or fraudulent purposes.",
+					"interference": "Attempt to interfere with the security, stability, or availability of the system.",
+					"unauthorizedAccess": "Try to access restricted areas or data from other users without authorization.",
+					"distribution": "Distribute viruses, malicious code, or any harmful content."
+				}
+			},
+			"intellectualProperty": {
+				"title": "Intellectual property",
+				"description": "All content available on the website, including texts, images, logos, and software, is protected by intellectual property rights. Unauthorized reproduction, distribution, or modification is prohibited without prior authorization."
+			},
+			"serviceAvailability": {
+				"title": "Service availability",
+				"description": "We strive to keep the website and services available, but we do not guarantee uninterrupted or error-free operation. Maintenance or updates may cause temporary unavailability."
+			},
+			"modifications": {
+				"title": "Changes to the Terms",
+				"description": "These Terms of Use may be updated periodically. We recommend checking this page regularly to be aware of any changes."
+			},
+			"limitationOfLiability": {
+				"title": "Limitation of liability",
+				"description": "We are not responsible for damages arising from misuse of the services, technical failures, or actions of third parties beyond our control."
+			},
+			"termination": {
+				"title": "Suspension and termination",
+				"description": "We reserve the right to suspend or terminate access to the website or services if the user violates these Terms of Use or engages in activities that compromise security or the integrity of the system."
+			},
+			"applicableLaw": {
+				"title": "Applicable law and jurisdiction",
+				"description": "These Terms of Use are governed by Brazilian law. Any disputes will be resolved in the courts of the user's jurisdiction, unless otherwise provided by applicable legislation."
+			},
+			"contact": {
+				"title": "Contact",
+				"description": "If you have any questions about these Terms of Use, please contact us:",
+				"email": "support@fefade.com"
+			}
+		}
 	}
 }

@@ -9,7 +9,6 @@
 	import { m } from "$lib/paraglide/messages.js"
 	import { getLocale, setLocale, type Locale } from "$lib/paraglide/runtime"
 	import favicon from "$lib/assets/favicon.ico"
-	import { Constants } from "@fefade-ui/core"
 
 	const locale = getLocale()
 	const isMd = useMediaQuery("max-width", "md")
@@ -58,12 +57,10 @@
 	style="
 	height: 60px;
 	justify-content: space-between;
-	border-radius: 0;
 	padding: 1rem;
 	position: sticky;
 	top: 0;
 	z-index: 998;
-	background: {Constants.themeColorVar.bg};
 	"
 >
 	{@render logo?.()}

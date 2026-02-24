@@ -10,7 +10,10 @@
 	<link rel="canonical" href="https://fefade.com/" />
 </svelte:head>
 
-<Provider defaultThemeMode="dark">
+<Provider
+	defaultThemeMode="dark"
+	theme={{ colors: { dark: { bg: "#020202" } } }}
+>
 	{@render children?.()}
 </Provider>
 

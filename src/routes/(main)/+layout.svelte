@@ -5,20 +5,21 @@
 	let { children }: LayoutProps = $props()
 </script>
 
-<Navbar />
-
-<main class="layout">
-	{@render children()}
-</main>
+<div class="layout">
+	<Navbar />
+	<main class="content">
+		{@render children()}
+	</main>
+</div>
 
 <style>
-	.layout {
-		margin: 0 auto;
+	.content {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		justify-content: center;
-		min-height: calc(100vh - 60px);
 		gap: 1rem;
+		min-height: calc(100vh - 60px);
+		width: 90%;
+		margin: 0 auto;
 	}
 </style>

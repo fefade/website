@@ -163,6 +163,22 @@
 		object-fit: cover;
 		z-index: -2;
 		transition: opacity 0.5s ease-out;
+
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			black 10%,
+			black 90%,
+			transparent 100%
+		);
+
+		mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			black 10%,
+			black 90%,
+			transparent 100%
+		);
 	}
 
 	.hero-overlay {
