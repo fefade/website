@@ -9,6 +9,16 @@
 			"source": "/menu",
 			"destination": "https://menu.dxdns.dev",
 			"permanent": true
+		},
+		{
+			"source": "/sql",
+			"destination": "https://sql.fefade.com",
+			"permanent": true
+		},
+		{
+			"source": "/image-to-text",
+			"destination": "/",
+			"permanent": true
 		}
 	]
 }

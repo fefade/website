@@ -2,7 +2,7 @@
 	import { m } from "$lib/paraglide/messages.js"
 	import { getLocale } from "$lib/paraglide/runtime.js"
 	import { Button } from "@fefade-ui/svelte"
-	import videoFile from "$lib/assets/video.mp4"
+	import videoFile from "$lib/assets/videos/intro.mp4"
 	import { onMount } from "svelte"
 
 	let { data } = $props()

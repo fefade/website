@@ -8,7 +8,7 @@
 	} from "@fefade-ui/svelte"
 	import { m } from "$lib/paraglide/messages.js"
 	import { getLocale, setLocale, type Locale } from "$lib/paraglide/runtime"
-	import favicon from "$lib/assets/favicon.ico"
+	import favicon from "$lib/assets/images/favicon.ico"
 
 	const locale = getLocale()
 	const isMd = useMediaQuery("max-width", "md")

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import favicon from "$lib/assets/favicon.ico"
+	import favicon from "$lib/assets/images/favicon.ico"
 	import { Provider } from "@fefade-ui/svelte"
 
 	let { children } = $props()
