@@ -1,5 +1,23 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"metadata": {
+		"title": "The digital impulse to go further",
+		"description": "We build the technological foundation your business needs to grow.",
+		"keywords": "software development, custom software, app development, web development, ui library, fefade, technology, innovation, digital transformation"
+	},
+	"hero": {
+		"title": {
+			"pre": "The digital",
+			"highlight": "impulse",
+			"post": "to go further"
+		},
+		"description": {
+			"pre": "We build the ",
+			"highlight": "technological foundation",
+			"middle": " your business needs to ",
+			"post": "grow."
+		}
+	},
 	"common": {
 		"cta": {
 			"sign_in": "Sign In",

@@ -1,5 +1,23 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"metadata": {
+		"title": "O impulso digital para ir mais longe",
+		"description": "Construímos a base tecnológica que sua empresa precisa para crescer.",
+		"keywords": "desenvolvimento de software, software sob medida, fábrica de software, fefade, tecnologia, inovação, transformação digital"
+	},
+	"hero": {
+		"title": {
+			"pre": "O",
+			"highlight": "impulso",
+			"post": "digital para ir mais longe"
+		},
+		"description": {
+			"pre": "Construímos a ",
+			"highlight": "base tecnológica",
+			"middle": " que sua empresa precisa para ",
+			"post": "crescer."
+		}
+	},
 	"common": {
 		"cta": {
 			"sign_in": "Entrar",

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { m } from "$lib/paraglide/messages.js"
-	import { getLocale } from "$lib/paraglide/runtime.js"
 	import { Button } from "@fefade-ui/svelte"
 	import videoFile from "$lib/assets/videos/intro.mp4"
 	import { onMount } from "svelte"
@@ -8,52 +7,6 @@
 	let { data } = $props()
 
 	let videoEl: HTMLVideoElement
-
-	const seoData = {
-		["pt-br"]: {
-			title: "O impulso digital para ir mais longe",
-			description:
-				"Construímos a base tecnológica que o seu negócio precisa para crescer.",
-			keywords:
-				"desenvolvimento de software, software sob medida, fábrica de software, fefade, tecnologia, inovação, transformação digital"
-		},
-		en: {
-			title: "The digital impulse to go further",
-			description:
-				"We build the technological foundation your business needs to grow.",
-			keywords:
-				"software development, custom software, app development, web development, ui library, fefade, technology, innovation, digital transformation"
-		}
-	}[getLocale()]
-
-	const heroData = {
-		"pt-br": {
-			title: {
-				pre: "O",
-				highlight: "impulso",
-				post: "digital para ir mais longe"
-			},
-			description: {
-				pre: "Construímos a ",
-				highlight: "base tecnológica",
-				middle: " que o seu negócio precisa para ",
-				post: "crescer."
-			}
-		},
-		en: {
-			title: {
-				pre: "The digital",
-				highlight: "impulse",
-				post: "to go further"
-			},
-			description: {
-				pre: "We build the ",
-				highlight: "technological foundation",
-				middle: " your business needs to ",
-				post: "grow."
-			}
-		}
-	}[getLocale()]
 
 	onMount(() => {
 		videoEl.addEventListener("timeupdate", () => {
@@ -66,9 +19,9 @@
 </script>
 
 <svelte:head>
-	<title>{seoData.title} | {data.title}</title>
-	<meta name="description" content={seoData.description} />
-	<meta name="keywords" content={seoData.keywords} />
+	<title>{m["metadata.title"]()} | {data.title}</title>
+	<meta name="description" content={m["metadata.description"]()} />
+	<meta name="keywords" content={m["metadata.keywords"]()} />
 </svelte:head>
 
 <section class="hero">
@@ -88,7 +41,7 @@
 			text-transform: uppercase;
 			"
 		>
-			{heroData.title.pre}
+			{m["hero.title.pre"]()}
 		</span>
 
 		<h1
@@ -104,7 +57,7 @@
 			margin: 0.5rem 0;
 			"
 		>
-			{heroData.title.highlight}
+			{m["hero.title.highlight"]()}
 		</h1>
 
 		<span
@@ -114,7 +67,7 @@
 			color: #cfcfcf;
 			"
 		>
-			{heroData.title.post}
+			{m["hero.title.post"]()}
 		</span>
 
 		<p
@@ -124,7 +77,7 @@
 			font-weight: 400;
 			"
 		>
-			{heroData.description.pre}
+			{m["hero.description.pre"]()}
 			<span
 				style="
 				font-weight: 600;
@@ -134,10 +87,10 @@
 				-webkit-text-fill-color: transparent;
 				"
 			>
-				{heroData.description.highlight}
+				{m["hero.description.highlight"]()}
 			</span>
-			{heroData.description.middle}
-			<span class="post">{heroData.description.post}</span>
+			{m["hero.description.middle"]()}
+			<span class="post">{m["hero.description.post"]()}</span>
 		</p>
 		<Button size="lg">{m["common.cta.sign_in"]()}</Button>
 	</div>
