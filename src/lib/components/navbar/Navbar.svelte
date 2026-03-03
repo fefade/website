@@ -8,7 +8,7 @@
 	} from "@fefade-ui/svelte"
 	import { m } from "$lib/paraglide/messages.js"
 	import { getLocale, setLocale, type Locale } from "$lib/paraglide/runtime"
-	import favicon from "$lib/assets/images/favicon.ico"
+	import icon32 from "$lib/assets/images/icon-32.png"
 
 	const locale = getLocale()
 	const isMd = useMediaQuery("max-width", "md")
@@ -17,15 +17,7 @@
 {#snippet logo()}
 	<Link href="/" title="logo" style="user-select: none;">
 		<div style="display: flex; align-items: center; gap: 0.5rem;">
-			<img
-				alt="logo"
-				src={favicon}
-				style="
-				margin: 0; 
-				height: 24px; 
-				width: 24px;
-				"
-			/>
+			<img alt="logo" src={icon32} />
 			<!-- <span style="font-size: 1rem;">fefade</span> -->
 		</div>
 	</Link>
