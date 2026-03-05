@@ -1,7 +1,7 @@
 {
 	"name": "website",
 	"private": true,
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -15,8 +15,8 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
-		"@fefade-ui/core": "^0.0.2",
-		"@fefade-ui/svelte": "^0.0.2",
+		"@fefade-ui/core": "^0.0.3",
+		"@fefade-ui/svelte": "^0.0.3",
 		"@inlang/paraglide-js": "^2.0.0"
 	},
 	"devDependencies": {
