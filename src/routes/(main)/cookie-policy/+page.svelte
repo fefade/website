@@ -16,7 +16,7 @@
 </header>
 
 <section id="what-are-cookies">
-	<h2>{m["pages.cookie_policy.whatAreCookies.title"]()}</h2>
+	<h1>{m["pages.cookie_policy.whatAreCookies.title"]()}</h1>
 	<p>{m["pages.cookie_policy.whatAreCookies.description"]()}</p>
 </section>
 
