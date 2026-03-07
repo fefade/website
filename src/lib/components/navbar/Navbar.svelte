@@ -1,11 +1,5 @@
 <script lang="ts">
-	import {
-		Link,
-		Navbar,
-		Select,
-		Separator,
-		useMediaQuery
-	} from "@fefade-ui/svelte"
+	import { Link, Navbar, Select, Separator } from "@fefade-ui/svelte"
 	import { m } from "$lib/paraglide/messages.js"
 	import { getLocale, setLocale, type Locale } from "$lib/paraglide/runtime"
 	import icon180 from "$lib/assets/images/icon-180.png"
@@ -13,7 +7,6 @@
 
 	const locale = getLocale()
 	const basePrefix = locale === "en" ? "" : `/${locale}`
-	const isMd = useMediaQuery("max-width", "md")
 
 	function isActive(path: string) {
 		return page.url.pathname === path
@@ -46,11 +39,9 @@
 {/snippet}
 
 {#snippet translationSelector()}
-	{#if !isMd.value}
-		<small title="language" class="muted">
-			{m["common.language_label"]()}:
-		</small>
-	{/if}
+	<small class="hidden md:block muted" title="language">
+		{m["common.language_label"]()}:
+	</small>
 
 	<Select
 		style="min-height: 0;"
@@ -80,19 +71,17 @@
 	>
 		{@render logo?.()}
 
-		{#if !isMd.value}
-			<div>
-				{#each NAVBAR_PATHS as { name, path } (path)}
-					<Navbar.Item
-						href={path}
-						aria-current={isActive(path) && "page"}
-						style="font-size: 13px;"
-					>
-						{name}
-					</Navbar.Item>
-				{/each}
-			</div>
-		{/if}
+		<div class="hidden lg:block">
+			{#each NAVBAR_PATHS as { name, path } (path)}
+				<Navbar.Item
+					href={path}
+					aria-current={isActive(path) && "page"}
+					style="font-size: 13px;"
+				>
+					{name}
+				</Navbar.Item>
+			{/each}
+		</div>
 
 		<div
 			style="
@@ -102,7 +91,7 @@
 			gap: 0.5em;
 			"
 		>
-			{#if !isMd.value}
+			<div class="items-center hidden md:flex">
 				<Link href="mailto:support@fefade.com">
 					<i class="fa-solid fa-envelope"></i>
 				</Link>
@@ -116,7 +105,7 @@
 					<i class="fa-brands fa-github"></i>
 				</Link>
 				<Separator orientation="vertical" style="height: 40px;" />
-			{/if}
+			</div>
 
 			{@render translationSelector?.()}
 		</div>
