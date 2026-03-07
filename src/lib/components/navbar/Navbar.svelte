@@ -12,7 +12,7 @@
 	import { page } from "$app/state"
 
 	const locale = getLocale()
-	const basePath = locale === "en" ? "/" : `/${locale}`
+	const basePrefix = locale === "en" ? "" : `/${locale}`
 	const isMd = useMediaQuery("max-width", "md")
 
 	function isActive(path: string) {
@@ -20,17 +20,20 @@
 	}
 
 	const NAVBAR_PATHS = [
-		{ name: m["common.home"](), path: basePath },
+		{ name: m["common.home"](), path: basePrefix || "/" },
 		{ name: m["common.contact"](), path: "mailto:support@fefade.com" },
 		{
 			name: m["pages.privacy_policy.title"](),
-			path: `${basePath}/privacy-policy`
+			path: `${basePrefix}/privacy-policy`
 		},
 		{
 			name: m["pages.cookie_policy.title"](),
-			path: `${basePath}/cookie-policy`
+			path: `${basePrefix}/cookie-policy`
 		},
-		{ name: m["pages.terms_of_use.title"](), path: `${basePath}/terms-of-use` }
+		{
+			name: m["pages.terms_of_use.title"](),
+			path: `${basePrefix}/terms-of-use`
+		}
 	]
 </script>
 
