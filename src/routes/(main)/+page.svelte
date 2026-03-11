@@ -92,7 +92,9 @@
 			{m["hero.description.middle"]()}
 			<span class="post">{m["hero.description.post"]()}</span>
 		</p>
-		<Button size="lg">{m["common.cta.sign_in"]()}</Button>
+		<Button size="lg" href="https://auth.fefade.com">
+			{m["common.cta.sign_in"]()}
+		</Button>
 	</div>
 </section>
 
