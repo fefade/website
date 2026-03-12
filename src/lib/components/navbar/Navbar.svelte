@@ -39,9 +39,9 @@
 {/snippet}
 
 {#snippet translationSelector()}
-	<small class="hidden md:block muted" title="language">
+	<span class="hidden md:block muted" title="language">
 		{m["common.language_label"]()}:
-	</small>
+	</span>
 
 	<Select
 		style="min-height: 0;"
@@ -51,6 +51,7 @@
 			const { value } = e.currentTarget
 			setLocale(value as Locale)
 		}}
+		selectStyle={{ "font-size": "16px" }}
 	>
 		<option value="pt-br" label="pt-br">pt-br</option>
 		<option value="en" label="en">en</option>
@@ -73,11 +74,7 @@
 
 		<div class="hidden lg:block">
 			{#each NAVBAR_PATHS as { name, path } (path)}
-				<Navbar.Item
-					href={path}
-					aria-current={isActive(path) && "page"}
-					style="font-size: 13px;"
-				>
+				<Navbar.Item href={path} aria-current={isActive(path) && "page"}>
 					{name}
 				</Navbar.Item>
 			{/each}
@@ -93,16 +90,16 @@
 		>
 			<div class="items-center hidden md:flex">
 				<Link href="mailto:support@fefade.com">
-					<i class="fa-solid fa-envelope"></i>
+					<i class="fa-solid fa-envelope icon"></i>
 				</Link>
 				<Link
 					href="https://play.google.com/store/apps/dev?id=7701571155946352525"
 					target="_blank"
 				>
-					<i class="fa-brands fa-google-play"></i>
+					<i class="fa-brands fa-google-play icon"></i>
 				</Link>
 				<Link href="https://github.com/fefade" target="_blank">
-					<i class="fa-brands fa-github"></i>
+					<i class="fa-brands fa-github icon"></i>
 				</Link>
 				<Separator orientation="vertical" style="height: 40px;" />
 			</div>
@@ -111,3 +108,9 @@
 		</div>
 	</Navbar>
 </nav>
+
+<style>
+	.icon {
+		font-size: 18px;
+	}
+</style>
