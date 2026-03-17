@@ -23,7 +23,16 @@ export default defineConfig(
 			// typescript-eslint strongly recommend that you do not use the no-undef lint rule on TypeScript projects.
 			// see: https://typescript-eslint.io/troubleshooting/faqs/eslint/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
 			"no-undef": "off",
-			"svelte/no-at-html-tags": "off"
+			"svelte/no-at-html-tags": "off",
+			"@typescript-eslint/no-empty-object-type": "off",
+			"@typescript-eslint/no-unused-vars": [
+				"warn",
+				{ argsIgnorePattern: "^_" }
+			],
+			"@typescript-eslint/no-explicit-any": "off",
+			"@typescript-eslint/ban-ts-comment": "off",
+			"prefer-const": "off",
+			"no-control-regex": "off"
 		}
 	},
 	{
@@ -35,19 +44,6 @@ export default defineConfig(
 				parser: ts.parser,
 				svelteConfig
 			}
-		}
-	},
-	{
-		rules: {
-			"@typescript-eslint/no-empty-object-type": "off",
-			"@typescript-eslint/no-unused-vars": [
-				"warn",
-				{ argsIgnorePattern: "^_" }
-			],
-			"@typescript-eslint/no-explicit-any": "off",
-			"@typescript-eslint/ban-ts-comment": "off",
-			"prefer-const": "off",
-			"no-control-regex": "off"
 		}
 	}
 )
