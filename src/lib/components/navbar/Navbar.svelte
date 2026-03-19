@@ -2,7 +2,7 @@
 	import { Link, Navbar, Select, Separator } from "@fefade-ui/svelte"
 	import { m } from "$lib/paraglide/messages.js"
 	import { getLocale, setLocale, type Locale } from "$lib/paraglide/runtime"
-	import icon180 from "$lib/assets/images/icon-180.png"
+	import icon180 from "$lib/assets/images/icon-180.png?enhanced"
 	import { page } from "$app/state"
 
 	const locale = getLocale()
@@ -33,7 +33,7 @@
 {#snippet logo()}
 	<Link href="/" title="logo" style="user-select: none;">
 		<div style="display: flex; align-items: center; gap: 0.5rem;">
-			<img alt="logo" src={icon180} width="48" height="48" />
+			<enhanced:img alt="logo" src={icon180} width="48" height="48" />
 		</div>
 	</Link>
 {/snippet}
