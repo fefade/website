@@ -6,20 +6,24 @@
 
 	let { data } = $props()
 
-	let videoEl: HTMLVideoElement
+	let videoEl: HTMLVideoElement | undefined = $state()
 
 	onMount(() => {
-		videoEl.addEventListener("timeupdate", () => {
-			if (videoEl.currentTime >= 7.6) {
-				videoEl.style.opacity = "0.3"
-				videoEl.pause()
-			}
-		})
+		if (videoEl) {
+			videoEl.addEventListener("timeupdate", (e) => {
+				const el = e.currentTarget as HTMLVideoElement
+
+				if (el.currentTime >= 7.6) {
+					el.style.opacity = "0.3"
+					el.pause()
+				}
+			})
+		}
 	})
 </script>
 
 <svelte:head>
-	<title>{m["metadata.title"]()} | {data.title}</title>
+	<title>{data.title}</title>
 	<meta name="description" content={m["metadata.description"]()} />
 	<meta name="keywords" content={m["metadata.keywords"]()} />
 </svelte:head>

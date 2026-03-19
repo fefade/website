@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { Navbar } from "$lib/components/navbar"
-	import type { LayoutProps } from "./$types"
 
-	let { children }: LayoutProps = $props()
+	let { children } = $props()
 </script>
 
 <div class="layout">

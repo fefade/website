@@ -1,7 +1,6 @@
 {
 	"name": "website",
 	"private": true,
-	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -17,7 +16,7 @@
 	"dependencies": {
 		"@fefade-ui/core": "^0.0.7",
 		"@fefade-ui/svelte": "^0.0.7",
-		"@inlang/paraglide-js": "^2.0.0"
+		"@inlang/paraglide-js": "^2.15.0"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^2.0.1",
@@ -38,5 +37,11 @@
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.53.1",
 		"vite": "^7.3.1"
+	},
+	"overrides": {
+		"@inlang/paraglide-js": {
+			"kysely": "0.28.13"
+		},
+		"cookie": "1.1.1"
 	}
 }
