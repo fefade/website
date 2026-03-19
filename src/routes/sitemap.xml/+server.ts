@@ -1,5 +1,11 @@
 export async function GET() {
-	const urls = ["/", "/cookie-policy", "/privacy-policy", "/terms-of-use"]
+	const urls = [
+		"/",
+		"/contact",
+		"/cookie-policy",
+		"/privacy-policy",
+		"/terms-of-use"
+	]
 		.map((route) => {
 			return `
 		<url>

@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { m } from "$lib/paraglide/messages.js"
-	import { Button } from "@fefade-ui/svelte"
+	import { Button, Link } from "@fefade-ui/svelte"
 	import videoFile from "$lib/assets/videos/intro.mp4"
 	import { onMount } from "svelte"
+	import footerData from "$lib/data/footerData"
 
 	let { data } = $props()
 
@@ -102,10 +103,31 @@
 	</div>
 </section>
 
+<div
+	class="flex gap-6 justify-center"
+	style="
+	height: 60px;
+	width: 90%;
+	margin: 0 auto;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	"
+>
+	<nav class="flex gap-6">
+		{#each footerData() as { name, path } (path)}
+			<Link href={path} style="font-size: 13px;">
+				{name}
+			</Link>
+		{/each}
+	</nav>
+</div>
+
 <style>
 	.hero {
 		position: relative;
-		height: calc(100vh - 60px);
+		height: 100vh;
 		width: 100%;
 		overflow: hidden;
 		display: flex;

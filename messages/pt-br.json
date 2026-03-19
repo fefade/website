@@ -28,6 +28,9 @@
 		"contact": "Contato"
 	},
 	"pages": {
+		"contact": {
+			"title": "Contato"
+		},
 		"cookie_policy": {
 			"title": "Política de Cookies",
 			"introduction": "Esta Política de Cookies explica como usamos cookies e tecnologias semelhantes para reconhecer você quando visita nosso site. Ela explica o que são essas tecnologias, por que as usamos e quais são seus direitos de controlar o uso delas.",

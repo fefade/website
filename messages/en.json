@@ -28,6 +28,9 @@
 		"contact": "Contact"
 	},
 	"pages": {
+		"contact": {
+			"title": "Contact"
+		},
 		"cookie_policy": {
 			"title": "Cookie Policy",
 			"introduction": "This Cookie Policy explains how we use cookies and similar technologies to recognize you when you visit our website. It explains what these technologies are, why we use them, and your rights to control their use.",

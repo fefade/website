@@ -2,14 +2,16 @@
 	let { children } = $props()
 </script>
 
-<div class="content">
+<div class="flex flex-col justify-center content">
 	{@render children()}
 </div>
 
 <style>
 	.content {
 		width: 60%;
-		margin: 3rem auto;
+		margin: 0 auto;
+		padding: 6rem 0;
+		min-height: calc(100vh - 60px - 3rem);
 	}
 
 	@media screen and (max-width: 768px) {

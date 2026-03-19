@@ -4,30 +4,13 @@
 	import { getLocale, setLocale, type Locale } from "$lib/paraglide/runtime"
 	import icon180 from "$lib/assets/images/icon-180.png?enhanced"
 	import { page } from "$app/state"
+	import navbarData from "$lib/data/navbarData"
 
 	const locale = getLocale()
-	const basePrefix = locale === "en" ? "" : `/${locale}`
 
 	function isActive(path: string) {
 		return page.url.pathname === path
 	}
-
-	const NAVBAR_PATHS = [
-		{ name: m["common.home"](), path: basePrefix || "/" },
-		{ name: m["common.contact"](), path: "mailto:support@fefade.com" },
-		{
-			name: m["pages.privacy_policy.title"](),
-			path: `${basePrefix}/privacy-policy`
-		},
-		{
-			name: m["pages.cookie_policy.title"](),
-			path: `${basePrefix}/cookie-policy`
-		},
-		{
-			name: m["pages.terms_of_use.title"](),
-			path: `${basePrefix}/terms-of-use`
-		}
-	]
 </script>
 
 {#snippet logo()}
@@ -60,20 +43,22 @@
 
 <nav>
 	<Navbar
-		variant="contained"
+		variant="text"
 		style="
 		height: 60px;
 		justify-content: space-between;
 		padding: 1rem;
-		position: sticky;
+		position: fixed;
 		top: 0;
 		z-index: 998;
+		background: #0000006e;
+		backdrop-filter: blur(5px);
 		"
 	>
 		{@render logo?.()}
 
 		<div class="hidden lg:block">
-			{#each NAVBAR_PATHS as { name, path } (path)}
+			{#each navbarData() as { name, path } (path)}
 				<Navbar.Item href={path} aria-current={isActive(path) && "page"}>
 					{name}
 				</Navbar.Item>
