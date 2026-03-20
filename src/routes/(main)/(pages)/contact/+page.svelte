@@ -1,10 +1,52 @@
 <script lang="ts">
 	import { m } from "$lib/paraglide/messages.js"
-	import { Button, Textarea, TextField } from "@fefade-ui/svelte"
+	import { Alert, Button, Textarea, TextField } from "@fefade-ui/svelte"
 
 	let { data } = $props()
 
-	async function handleSubmit() {}
+	let isLoading = $state(false)
+	let messageError: string | undefined = $state()
+	let sent = $state(false)
+
+	async function handleSubmit(event: SubmitEvent) {
+		event.preventDefault()
+
+		const form = event.currentTarget as HTMLFormElement
+		const formData = new FormData(form)
+
+		const email = formData.get("email")?.toString() ?? ""
+		const name = formData.get("name")?.toString() ?? ""
+		const message = formData.get("message")?.toString() ?? ""
+
+		try {
+			isLoading = true
+
+			if (!email || !name || !message) {
+				throw new Error("Fill in the required fields.")
+			}
+
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				body: JSON.stringify({
+					email,
+					name,
+					message
+				})
+			})
+
+			if (!response.ok) {
+				const { error } = await response.json()
+				throw new Error(error)
+			}
+
+			sent = true
+			messageError = undefined
+		} catch (error) {
+			messageError = (error as Error).message
+		} finally {
+			isLoading = false
+		}
+	}
 </script>
 
 <svelte:head>
@@ -28,12 +70,23 @@
 		</p>
 	</div>
 
-	<form class="flex flex-col gap-6" style="flex: 1;" onsubmit={handleSubmit}>
-		<TextField id="name" name="name" label="Name" />
-		<TextField id="email" name="email" label="Email" />
+	<form
+		class="flex flex-col gap-6"
+		style="flex: 1;"
+		onsubmit={handleSubmit}
+		autocomplete="off"
+		novalidate
+	>
+		{#if messageError}
+			<Alert color="error">{messageError}</Alert>
+		{:else if sent}
+			<Alert color="success">Message sent successfully.</Alert>
+		{/if}
+		<TextField id="name" name="name" label="Name" required />
+		<TextField id="email" name="email" label="Email" required />
 
 		<strong>Message:</strong>
-		<Textarea id="message" name="message" style="min-height: 150px;" />
-		<Button disabled>Send</Button>
+		<Textarea id="message" name="message" style="min-height: 150px;" required />
+		<Button disabled={isLoading} type="submit">Send</Button>
 	</form>
 </div>

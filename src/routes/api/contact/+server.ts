@@ -10,14 +10,18 @@ export const POST: RequestHandler = async ({ request }) => {
 		const parsed = contactSchema.safeParse(body)
 
 		if (!parsed.success) {
-			return json({ error: z.treeifyError(parsed.error) }, { status: 400 })
+			throw new z.ZodError(parsed.error.issues)
 		}
 
 		await sendMessage(parsed.data)
 
-		return json({ success: true }, { status: 200 })
+		return new Response(undefined, { status: 200 })
 	} catch (err) {
 		console.error(err)
+
+		if (err instanceof z.ZodError) {
+			return json({ error: err.issues[0].message }, { status: 400 })
+		}
 
 		return json({ error: "Internal server error" }, { status: 500 })
 	}

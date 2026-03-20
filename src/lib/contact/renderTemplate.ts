@@ -6,7 +6,7 @@ export default async function (
 	templateName: string,
 	data: Record<string, unknown>
 ) {
-	const filePath = path.resolve("src/lib/email", `${templateName}.hbs`)
+	const filePath = path.resolve("src/lib/contact", `${templateName}.hbs`)
 
 	const file = await fs.readFile(filePath, "utf-8")
 	const template = Handlebars.compile(file)
