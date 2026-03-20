@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { m } from "$lib/paraglide/messages.js"
-	import { Link } from "@fefade-ui/svelte"
 
 	let { data } = $props()
 </script>
@@ -70,14 +69,4 @@
 <section id="changes">
 	<h2>{m["pages.cookie_policy.changes.title"]()}</h2>
 	<p>{m["pages.cookie_policy.changes.description"]()}</p>
-</section>
-
-<section id="contact">
-	<h2>{m["pages.cookie_policy.contact.title"]()}</h2>
-	<p>
-		{m["pages.cookie_policy.contact.description"]()}
-		<Link href="mailto:support@fefade.com" hover="underlineNone">
-			support@fefade.com
-		</Link>
-	</p>
 </section>

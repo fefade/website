@@ -3,6 +3,7 @@
 	import { m } from "$lib/paraglide/messages"
 	import { getLocale, setLocale, type Locale } from "$lib/paraglide/runtime"
 	import { Link, Select, Separator, Text } from "@fefade-ui/svelte"
+	import * as Constants from "$lib/constants"
 
 	const locale = getLocale()
 </script>
@@ -21,21 +22,17 @@
 			<p class="muted">{m["footer.description"]()}</p>
 
 			<div class="flex gap-4">
-				<Link href="mailto:support@fefade.com" style="min-width: 0;">
+				<Link href={Constants.SUPPORT_EMAIL_URL} style="min-width: 0;">
 					<i class="fa-solid fa-envelope icon"></i>
 				</Link>
 				<Link
-					href="https://play.google.com/store/apps/dev?id=7701571155946352525"
+					href={Constants.PLAY_STORE_URL}
 					target="_blank"
 					style="min-width: 0;"
 				>
 					<i class="fa-brands fa-google-play icon"></i>
 				</Link>
-				<Link
-					href="https://github.com/fefade"
-					target="_blank"
-					style="min-width: 0;"
-				>
+				<Link href={Constants.GITHUB_URL} target="_blank" style="min-width: 0;">
 					<i class="fa-brands fa-github icon"></i>
 				</Link>
 			</div>

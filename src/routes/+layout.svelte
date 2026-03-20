@@ -54,4 +54,13 @@
 	:global(p, ul) {
 		line-height: 1.5;
 	}
+
+	:global(a) {
+		color: var(--ff-on-bg);
+		transition: opacity 0.3s ease;
+	}
+
+	:global(a:hover) {
+		opacity: 0.7;
+	}
 </style>

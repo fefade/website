@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { m } from "$lib/paraglide/messages.js"
 	import { Alert, Button, Textarea, TextField } from "@fefade-ui/svelte"
+	import * as Constants from "$lib/constants"
 
 	let { data } = $props()
 
@@ -57,17 +58,17 @@
 	<div style="flex: 1;">
 		<h1>{m["pages.contact.title"]()}</h1>
 		<p>
-			<strong>Need help? We’re here for you!</strong>
+			<strong>{m["pages.contact.section_one.title"]()}</strong>
 			<br />
-			Our online support hours are Monday to Friday, from 8:00 AM to 5:00 PM. You
-			will receive a response within 2 business days.
+			{m["pages.contact.section_one.description"]()}
 		</p>
 
 		<p>
-			<strong>Email Support</strong>
+			<strong>{m["pages.contact.section_two.title"]()}</strong>
 			<br />
-			Fill out the form below to send us your message. Make sure to double-check your
-			email address, as it’s the channel through which we will reply.
+			{@html m["pages.contact.section_two.description"]({
+				email: `<a href=${Constants.SUPPORT_EMAIL_URL}>${Constants.SUPPORT_EMAIL}</a>`
+			})}
 		</p>
 	</div>
 
@@ -81,13 +82,15 @@
 		{#if messageError}
 			<Alert color="error">{messageError}</Alert>
 		{:else if sent}
-			<Alert color="success">Message sent successfully.</Alert>
+			<Alert color="success">{m["pages.contact.sent"]()}</Alert>
 		{/if}
-		<TextField id="name" name="name" label="Name" required />
+		<TextField id="name" name="name" label={m["common.name"]()} required />
 		<TextField id="email" name="email" label="Email" required />
 
-		<strong>Message:</strong>
+		<strong>{m["common.message"]()}:</strong>
 		<Textarea id="message" name="message" style="min-height: 150px;" required />
-		<Button {isLoading} disabled={isLoading} type="submit">Send</Button>
+		<Button {isLoading} disabled={isLoading} type="submit">
+			{m["common.cta.send"]()}
+		</Button>
 	</form>
 </div>

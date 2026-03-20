@@ -22,15 +22,27 @@
 		"cta": {
 			"sign_in": "Entrar",
 			"sign_up": "Inscrever-se",
-			"go_back": "Voltar"
+			"go_back": "Voltar",
+			"send": "Enviar"
 		},
 		"language_label": "Idioma",
 		"home": "Página Inicial",
-		"contact": "Contato"
+		"contact": "Contato",
+		"name": "Nome",
+		"message": "Mensagem"
 	},
 	"pages": {
 		"contact": {
-			"title": "Contato"
+			"title": "Contato",
+			"section_one": {
+				"title": "Precisar de ajuda? Estamos aqui para ajudá-lo!",
+				"description": "Nosso horário de suporte online é de segunda a sexta, das 8h às 17h. Você receberá uma resposta dentro de 2 dias úteis."
+			},
+			"section_two": {
+				"title": "Suporte por e-mail",
+				"description": "Você pode entrar em contato conosco diretamente em {email} ou envie-nos uma mensagem através do formulário de contato. Certifique-se de verificar seu endereço de e-mail, pois é o canal pelo qual responderemos."
+			},
+			"sent": "Mensagem enviada com sucesso."
 		},
 		"cookie_policy": {
 			"title": "Política de Cookies",
