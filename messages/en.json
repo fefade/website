@@ -21,6 +21,7 @@
 	"common": {
 		"cta": {
 			"sign_in": "Sign In",
+			"sign_up": "Sign Up",
 			"go_back": "Go Back"
 		},
 		"language_label": "Language",
@@ -188,5 +189,8 @@
 				"email": "support@fefade.com"
 			}
 		}
+	},
+	"footer": {
+		"description": "Turn your ideas into value."
 	}
 }

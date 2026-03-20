@@ -21,6 +21,7 @@
 	"common": {
 		"cta": {
 			"sign_in": "Entrar",
+			"sign_up": "Inscrever-se",
 			"go_back": "Voltar"
 		},
 		"language_label": "Idioma",
@@ -188,5 +189,8 @@
 				"email": "suporte@fefade.com"
 			}
 		}
+	},
+	"footer": {
+		"description": "Transforme suas ideias em valor."
 	}
 }

@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { m } from "$lib/paraglide/messages.js"
-	import { Button, Link } from "@fefade-ui/svelte"
 	import videoFile from "$lib/assets/videos/intro.mp4"
 	import { onMount } from "svelte"
-	import footerData from "$lib/data/footerData"
 
 	let { data } = $props()
 
@@ -97,32 +95,8 @@
 			{m["hero.description.middle"]()}
 			<span class="post">{m["hero.description.post"]()}</span>
 		</p>
-		<Button size="lg" href="https://auth.fefade.com">
-			{m["common.cta.sign_in"]()}
-		</Button>
 	</div>
 </section>
-
-<div
-	class="flex gap-6 justify-center"
-	style="
-	height: 60px;
-	width: 90%;
-	margin: 0 auto;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	"
->
-	<nav class="flex gap-6">
-		{#each footerData() as { name, path } (path)}
-			<Link href={path} style="font-size: 13px;">
-				{name}
-			</Link>
-		{/each}
-	</nav>
-</div>
 
 <style>
 	.hero {
