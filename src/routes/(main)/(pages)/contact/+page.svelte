@@ -53,7 +53,7 @@
 	<title>{m["pages.contact.title"]()} | {data.title}</title>
 </svelte:head>
 
-<div class="flex flex-col md:flex-row gap-6">
+<div class="flex flex-col md:flex-row gap-10">
 	<div style="flex: 1;">
 		<h1>{m["pages.contact.title"]()}</h1>
 		<p>
@@ -65,6 +65,7 @@
 
 		<p>
 			<strong>Email Support</strong>
+			<br />
 			Fill out the form below to send us your message. Make sure to double-check your
 			email address, as it’s the channel through which we will reply.
 		</p>

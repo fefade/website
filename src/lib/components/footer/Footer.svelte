@@ -22,21 +22,21 @@
 
 			<div class="flex gap-4">
 				<Link href="mailto:support@fefade.com" style="min-width: 0;">
-					<i class="fa-solid fa-envelope icon muted"></i>
+					<i class="fa-solid fa-envelope icon"></i>
 				</Link>
 				<Link
 					href="https://play.google.com/store/apps/dev?id=7701571155946352525"
 					target="_blank"
 					style="min-width: 0;"
 				>
-					<i class="fa-brands fa-google-play icon muted"></i>
+					<i class="fa-brands fa-google-play icon"></i>
 				</Link>
 				<Link
 					href="https://github.com/fefade"
 					target="_blank"
 					style="min-width: 0;"
 				>
-					<i class="fa-brands fa-github icon muted"></i>
+					<i class="fa-brands fa-github icon"></i>
 				</Link>
 			</div>
 
@@ -83,5 +83,13 @@
 
 	.icon {
 		font-size: 18px;
+		opacity: 0.5;
+		transition: opacity 0.3s ease;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		.icon:hover {
+			opacity: 1;
+		}
 	}
 </style>

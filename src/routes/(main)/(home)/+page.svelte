@@ -2,6 +2,9 @@
 	import { m } from "$lib/paraglide/messages.js"
 	import videoFile from "$lib/assets/videos/intro.mp4"
 	import { onMount } from "svelte"
+	import { Button } from "@fefade-ui/svelte"
+	import { goto } from "$app/navigation"
+	import { resolve } from "$app/paths"
 
 	let { data } = $props()
 
@@ -95,6 +98,16 @@
 			{m["hero.description.middle"]()}
 			<span class="post">{m["hero.description.post"]()}</span>
 		</p>
+
+		<Button
+			size="lg"
+			title={m["common.contact"]()}
+			onclick={async () => {
+				await goto(resolve("/contact"))
+			}}
+		>
+			{m["common.contact"]()}
+		</Button>
 	</div>
 </section>
 
