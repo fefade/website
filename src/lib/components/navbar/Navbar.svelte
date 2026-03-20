@@ -2,10 +2,18 @@
 	import { Button, Link, Navbar } from "@fefade-ui/svelte"
 	import { m } from "$lib/paraglide/messages.js"
 	import icon180 from "$lib/assets/images/icon-180.png?enhanced"
+	import { withLocalePath } from "$lib/utils/withLocalePath"
+	import { getLocale } from "$lib/paraglide/runtime"
+
+	const locale = getLocale()
 </script>
 
 {#snippet logo()}
-	<Link href="/" title="logo" style="user-select: none;">
+	<Link
+		href={withLocalePath("/", { locale })}
+		title="logo"
+		style="user-select: none;"
+	>
 		<enhanced:img alt="logo" src={icon180} width="48" height="48" />
 	</Link>
 {/snippet}

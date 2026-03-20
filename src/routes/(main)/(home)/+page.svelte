@@ -2,11 +2,13 @@
 	import { m } from "$lib/paraglide/messages.js"
 	import videoFile from "$lib/assets/videos/intro.mp4"
 	import { onMount } from "svelte"
-	import { Button } from "@fefade-ui/svelte"
-	import { goto } from "$app/navigation"
-	import { resolve } from "$app/paths"
+	import { Link } from "@fefade-ui/svelte"
+	import { withLocalePath } from "$lib/utils/withLocalePath"
+	import { getLocale } from "$lib/paraglide/runtime.js"
 
 	let { data } = $props()
+
+	const locale = getLocale()
 
 	let videoEl: HTMLVideoElement | undefined = $state()
 
@@ -99,15 +101,13 @@
 			<span class="post">{m["hero.description.post"]()}</span>
 		</p>
 
-		<Button
-			size="lg"
-			title={m["common.contact"]()}
-			onclick={async () => {
-				await goto(resolve("/contact"))
-			}}
+		<Link
+			variant="contained"
+			href={withLocalePath("contact", { locale })}
+			style="padding: 1rem;"
 		>
-			{m["common.contact"]()}
-		</Button>
+			<strong>{m["common.contact"]()}</strong>
+		</Link>
 	</div>
 </section>
 
