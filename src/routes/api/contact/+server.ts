@@ -1,9 +1,10 @@
 import { contactSchema } from "$lib/contact/schema"
 import sendMessage from "$lib/contact/sendMessage"
+import { withRateLimit } from "$lib/withRateLimit"
 import { json, type RequestHandler } from "@sveltejs/kit"
 import { z } from "zod"
 
-export const POST: RequestHandler = async ({ request }) => {
+const handler: RequestHandler = async ({ request }) => {
 	try {
 		const body = await request.json()
 
@@ -26,3 +27,5 @@ export const POST: RequestHandler = async ({ request }) => {
 		return json({ error: "Internal server error" }, { status: 500 })
 	}
 }
+
+export const POST = withRateLimit(handler)

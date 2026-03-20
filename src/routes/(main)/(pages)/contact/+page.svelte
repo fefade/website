@@ -87,6 +87,6 @@
 
 		<strong>Message:</strong>
 		<Textarea id="message" name="message" style="min-height: 150px;" required />
-		<Button disabled={isLoading} type="submit">Send</Button>
+		<Button {isLoading} disabled={isLoading} type="submit">Send</Button>
 	</form>
 </div>
