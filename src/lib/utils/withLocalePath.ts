@@ -1,3 +1,5 @@
+import { getLocale } from "$lib/paraglide/runtime"
+
 type Options = {
 	locale?: string
 	defaultLocale?: string
@@ -5,7 +7,7 @@ type Options = {
 
 export function withLocalePath(
 	path: string,
-	{ locale, defaultLocale = "en" }: Options = {}
+	{ locale = getLocale(), defaultLocale = "en" }: Options = {}
 ): string {
 	if (!path) return "/"
 

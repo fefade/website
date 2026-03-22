@@ -4,11 +4,8 @@
 	import { onMount } from "svelte"
 	import { Link } from "@fefade-ui/svelte"
 	import { withLocalePath } from "$lib/utils/withLocalePath"
-	import { getLocale } from "$lib/paraglide/runtime.js"
 
 	let { data } = $props()
-
-	const locale = getLocale()
 
 	let videoEl: HTMLVideoElement | undefined = $state()
 
@@ -27,7 +24,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.title}</title>
+	<title>{m["metadata.title"]()} | {data.title}</title>
 	<meta name="description" content={m["metadata.description"]()} />
 	<meta name="keywords" content={m["metadata.keywords"]()} />
 </svelte:head>
@@ -103,7 +100,7 @@
 
 		<Link
 			variant="contained"
-			href={withLocalePath("contact", { locale })}
+			href={withLocalePath("contact")}
 			style="padding: 1rem;"
 		>
 			<strong>{m["common.contact"]()}</strong>

@@ -46,7 +46,7 @@
 	},
 	"overrides": {
 		"@inlang/paraglide-js": {
-			"kysely": "0.28.13"
+			"kysely": "0.28.14"
 		},
 		"cookie": "1.1.1"
 	}
