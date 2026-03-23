@@ -1,4 +1,16 @@
-export const AUTH_URL = "https://auth.fefade.com"
+const SERVICE_NAME = "fefade Account"
+const REDIRECT_URI = "https://account.fefade.com"
+
+function getAuthUrl(
+	serviceName: string = SERVICE_NAME,
+	redirectUri: string = REDIRECT_URI
+) {
+	const encodedServiceName = encodeURIComponent(serviceName)
+	const encodedRedirectUri = encodeURIComponent(redirectUri)
+	return `https://auth.fefade.com?service_name=${encodedServiceName}&redirect_uri=${encodedRedirectUri}`
+}
+
+export const AUTH_URL = getAuthUrl()
 
 export const SUPPORT_EMAIL = "support@fefade.com"
 

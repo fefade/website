@@ -3,6 +3,7 @@
 	import { m } from "$lib/paraglide/messages.js"
 	import icon180 from "$lib/assets/images/icon-180.png?enhanced"
 	import { withLocalePath } from "$lib/utils/withLocalePath"
+	import * as Constants from "$lib/constants"
 </script>
 
 {#snippet logo()}
@@ -40,7 +41,7 @@
 			<Button
 				size="md"
 				title={m["common.cta.sign_in"]()}
-				href="https://auth.fefade.com"
+				href={Constants.AUTH_URL}
 			>
 				{m["common.cta.sign_in"]()}
 			</Button>
