@@ -2,7 +2,7 @@
 	import { m } from "$lib/paraglide/messages.js"
 	import videoFile from "$lib/assets/videos/intro.mp4"
 	import { onMount } from "svelte"
-	import { Link } from "@fefade-ui/svelte"
+	import { Button, Link } from "@fefade-ui/svelte"
 	import { withLocalePath } from "$lib/utils/withLocalePath"
 
 	let { data } = $props()
@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-	<title>{m["metadata.title"]()} | {data.title}</title>
+	<title>{data.title}</title>
 	<meta name="description" content={m["metadata.description"]()} />
 	<meta name="keywords" content={m["metadata.keywords"]()} />
 </svelte:head>
@@ -98,12 +98,8 @@
 			<span class="post">{m["hero.description.post"]()}</span>
 		</p>
 
-		<Link
-			variant="contained"
-			href={withLocalePath("contact")}
-			style="padding: 1rem;"
-		>
-			<strong>{m["common.contact"]()}</strong>
+		<Link href={withLocalePath("contact")} style="padding: 1rem;">
+			<Button size="lg">{m["common.contact"]()}</Button>
 		</Link>
 	</div>
 </section>

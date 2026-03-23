@@ -18,7 +18,7 @@
 			"
 	>
 		<div style="max-width: 250px;">
-			<Text as="h2" style="font-weight: 300;">fefade</Text>
+			<Text as="span" style="font-size: 1.5em; font-weight: 400;">fefade</Text>
 			<p class="muted">{m["footer.description"]()}</p>
 
 			<div class="flex gap-4">

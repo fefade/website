@@ -34,6 +34,7 @@
 	"pages": {
 		"contact": {
 			"title": "Contato",
+			"introduction": "Entre em contato conosco para tirar dúvidas, solicitar informações ou iniciar seu projeto. Nossa equipe está pronta para ajudar você de forma rápida e eficiente. Preencha o formulário ou fale conosco pelos canais disponíveis.",
 			"section_one": {
 				"title": "Precisa de ajuda? Estamos aqui para ajudá-lo!",
 				"description": "Nosso horário de suporte online é de segunda a sexta, das 8h às 17h. Você receberá uma resposta dentro de 2 dias úteis."

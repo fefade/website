@@ -8,13 +8,16 @@
 {#snippet logo()}
 	<Link
 		href={withLocalePath("/")}
-		title="logo"
+		title="fefade"
 		style="
 		user-select: none; 
 		line-height: normal;
 		"
 	>
 		<enhanced:img alt="logo" src={icon180} width="48" height="48" />
+		<span class="hidden md:block" style="font-size: 20px; font-weight: 400;">
+			fefade
+		</span>
 	</Link>
 {/snippet}
 
@@ -34,7 +37,11 @@
 		{@render logo?.()}
 
 		<div class="flex justify-end items-center gap-2">
-			<Button title={m["common.cta.sign_in"]()} href="https://auth.fefade.com">
+			<Button
+				size="md"
+				title={m["common.cta.sign_in"]()}
+				href="https://auth.fefade.com"
+			>
 				{m["common.cta.sign_in"]()}
 			</Button>
 		</div>

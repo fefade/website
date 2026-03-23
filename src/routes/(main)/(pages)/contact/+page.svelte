@@ -52,6 +52,7 @@
 
 <svelte:head>
 	<title>{m["pages.contact.title"]()} | {data.title}</title>
+	<meta name="description" content={m["pages.contact.introduction"]()} />
 </svelte:head>
 
 <div class="flex flex-col md:flex-row gap-10">
