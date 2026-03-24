@@ -3,9 +3,12 @@
 	import icon32 from "$lib/assets/images/icon-32.png"
 	import icon180 from "$lib/assets/images/icon-180.png"
 	import { Provider } from "@fefade-ui/svelte"
+	import { GoogleAnalytics } from "$lib/components/google-analytics"
 
 	let { children } = $props()
 </script>
+
+<GoogleAnalytics id="G-G2ESFNYD16" strategy="lazyOnload" />
 
 <svelte:head>
 	<link rel="icon" href={icon32} />

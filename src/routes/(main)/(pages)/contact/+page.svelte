@@ -68,7 +68,7 @@
 			<strong>{m["pages.contact.section_two.title"]()}</strong>
 			<br />
 			{@html m["pages.contact.section_two.description"]({
-				email: `<a href=${Constants.SUPPORT_EMAIL_URL}>${Constants.SUPPORT_EMAIL}</a>`
+				email: `<a title="email" href=${Constants.SUPPORT_EMAIL_URL}>${Constants.SUPPORT_EMAIL}</a>`
 			})}
 		</p>
 	</div>

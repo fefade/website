@@ -98,7 +98,11 @@
 			<span class="post">{m["hero.description.post"]()}</span>
 		</p>
 
-		<Link href={withLocalePath("contact")} style="padding: 1rem;">
+		<Link
+			title={m["common.contact"]()}
+			href={withLocalePath("contact")}
+			style="padding: 1rem;"
+		>
 			<Button size="lg">{m["common.contact"]()}</Button>
 		</Link>
 	</div>

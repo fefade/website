@@ -8,8 +8,8 @@
 
 {#snippet logo()}
 	<Link
-		href={withLocalePath("/")}
 		title="fefade"
+		href={withLocalePath("/")}
 		style="
 		user-select: none; 
 		line-height: normal;

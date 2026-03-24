@@ -22,17 +22,27 @@
 			<p class="muted">{m["footer.description"]()}</p>
 
 			<div class="flex gap-4">
-				<Link href={Constants.SUPPORT_EMAIL_URL} style="min-width: 0;">
+				<Link
+					title="email"
+					href={Constants.SUPPORT_EMAIL_URL}
+					style="min-width: 0;"
+				>
 					<i class="fa-solid fa-envelope icon"></i>
 				</Link>
 				<Link
+					title="google play"
 					href={Constants.PLAY_STORE_URL}
 					target="_blank"
 					style="min-width: 0;"
 				>
 					<i class="fa-brands fa-google-play icon"></i>
 				</Link>
-				<Link href={Constants.GITHUB_URL} target="_blank" style="min-width: 0;">
+				<Link
+					title="github"
+					href={Constants.GITHUB_URL}
+					target="_blank"
+					style="min-width: 0;"
+				>
 					<i class="fa-brands fa-github icon"></i>
 				</Link>
 			</div>
