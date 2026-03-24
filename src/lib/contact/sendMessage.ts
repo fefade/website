@@ -4,7 +4,7 @@ import type { ContactType } from "./schema"
 import { env } from "$env/dynamic/private"
 
 export default async function (data: ContactType) {
-	const html = await renderTemplate("template", data)
+	const html = await renderTemplate(data)
 
 	return transporter.sendMail({
 		from: `"${data.name}" <${env.EMAIL_USER}>`,
