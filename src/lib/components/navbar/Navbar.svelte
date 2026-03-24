@@ -3,7 +3,7 @@
 	import { m } from "$lib/paraglide/messages.js"
 	import icon180 from "$lib/assets/images/icon-180.png?enhanced"
 	import { withLocalePath } from "$lib/utils/withLocalePath"
-	import * as Constants from "$lib/constants"
+	import { Constants } from "$lib"
 </script>
 
 {#snippet logo()}

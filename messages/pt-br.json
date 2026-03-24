@@ -12,10 +12,8 @@
 			"post": "digital para ir mais longe"
 		},
 		"description": {
-			"pre": "Construímos a ",
-			"highlight": "base tecnológica",
-			"middle": " que sua empresa precisa para ",
-			"post": "crescer."
+			"pre": "Construímos a {highlight} que sua empresa precisa para crescer.",
+			"highlight": "base tecnológica"
 		}
 	},
 	"common": {

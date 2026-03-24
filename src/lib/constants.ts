@@ -20,3 +20,5 @@ export const PLAY_STORE_URL =
 	"https://play.google.com/store/apps/dev?id=7701571155946352525"
 
 export const GITHUB_URL = "https://github.com/fefade"
+
+export const GTM_ID = "G-G2ESFNYD16"

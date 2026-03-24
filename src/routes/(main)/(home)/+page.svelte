@@ -82,8 +82,9 @@
 			font-weight: 400;
 			"
 		>
-			{m["hero.description.pre"]()}
-			<span
+			{@html m["hero.description.pre"]({
+				highlight: `
+				<span
 				style="
 				font-weight: 600;
 				background: linear-gradient(180deg, #ffffff 0%, #bdbdbd 100%);
@@ -91,18 +92,14 @@
 				background-clip: text;
 				-webkit-text-fill-color: transparent;
 				"
-			>
-				{m["hero.description.highlight"]()}
-			</span>
-			{m["hero.description.middle"]()}
-			<span class="post">{m["hero.description.post"]()}</span>
+				>
+				${m["hero.description.highlight"]()}
+				</span>
+				`
+			})}
 		</p>
 
-		<Link
-			title={m["common.contact"]()}
-			href={withLocalePath("contact")}
-			style="padding: 1rem;"
-		>
+		<Link href={withLocalePath("contact")} style="padding: 1rem;">
 			<Button size="lg">{m["common.contact"]()}</Button>
 		</Link>
 	</div>

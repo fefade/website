@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { Constants } from "$lib"
 	import { m } from "$lib/paraglide/messages.js"
 	import { Alert, Button, Textarea, TextField } from "@fefade-ui/svelte"
-	import * as Constants from "$lib/constants"
 
 	let { data } = $props()
 

@@ -3,17 +3,28 @@
 	import icon32 from "$lib/assets/images/icon-32.png"
 	import icon180 from "$lib/assets/images/icon-180.png"
 	import { Provider } from "@fefade-ui/svelte"
-	import { GoogleAnalytics } from "$lib/components/google-analytics"
 
 	let { children } = $props()
 </script>
-
-<GoogleAnalytics id="G-G2ESFNYD16" strategy="lazyOnload" />
 
 <svelte:head>
 	<link rel="icon" href={icon32} />
 	<link rel="apple-touch-icon" sizes="180x180" href={icon180} />
 	<link rel="canonical" href={page.url.href} />
+
+	<script
+		async
+		src="https://www.googletagmanager.com/gtag/js?id=G-G2ESFNYD16"
+	></script>
+	<script>
+		window.dataLayer = window.dataLayer || []
+		function gtag() {
+			dataLayer.push(arguments)
+		}
+		gtag("js", new Date())
+
+		gtag("config", "G-G2ESFNYD16")
+	</script>
 </svelte:head>
 
 <Provider

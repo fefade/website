@@ -12,10 +12,8 @@
 			"post": "to go further"
 		},
 		"description": {
-			"pre": "We build the ",
-			"highlight": "technological foundation",
-			"middle": " your business needs to ",
-			"post": "grow."
+			"pre": "We build the {highlight} your business needs to grow.",
+			"highlight": "technological foundation"
 		}
 	},
 	"common": {
