@@ -1,6 +1,7 @@
 <script lang="ts">
+	import { resolve } from "$app/paths"
 	import { Constants } from "$lib"
-	import { Button, Drawer } from "@fefade-ui/svelte"
+	import { Button, Drawer, Link } from "@fefade-ui/svelte"
 	import { onMount } from "svelte"
 
 	interface Props {
@@ -33,18 +34,24 @@
 	})
 </script>
 
-<Drawer {isOpen} position="bottom" style="padding: 0;">
-	<Drawer.Header style="justify-content: flex-start;">
-		<strong>🍪 We use cookies</strong>
-	</Drawer.Header>
-	<Drawer.Content>
-		<p>
+<Drawer
+	class="flex flex-col items-center"
+	{isOpen}
+	position="bottom"
+	style="padding: 0;"
+>
+	<Drawer.Content style="gap: 0.5rem;">
+		<h3>🍪 We use cookies</h3>
+		<p style="max-width: 500px;">
 			We use cookies to enhance your experience. By continuing to visit this
-			site you agree to our use of cookies.
+			site you agree to our use of cookies. <Link
+				href={resolve("/cookie-policy")}
+				hover="underlineNone"
+			>
+				Read cookies policies.
+			</Link>
 		</p>
-		<div
-			style="display: flex; justify-content: flex-end; gap: 0.5rem; align-items: baseline;"
-		>
+		<div class="flex flex-col md:flex-row md:items-center gap-4">
 			<Button variant="outlined" onclick={decline}>Decline</Button>
 			<Button onclick={accept}>Accept</Button>
 		</div>
