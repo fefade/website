@@ -1,16 +1,4 @@
-const SERVICE_NAME = "fefade Account"
-const REDIRECT_URI = "https://account.fefade.com"
-
-function getAuthUrl(
-	serviceName: string = SERVICE_NAME,
-	redirectUri: string = REDIRECT_URI
-) {
-	const encodedServiceName = encodeURIComponent(serviceName)
-	const encodedRedirectUri = encodeURIComponent(redirectUri)
-	return `https://auth.fefade.com?service_name=${encodedServiceName}&redirect_uri=${encodedRedirectUri}`
-}
-
-export const AUTH_URL = getAuthUrl()
+export const AUTH_URL = "https://auth.fefade.com"
 
 export const SUPPORT_EMAIL = "support@fefade.com"
 
@@ -21,4 +9,6 @@ export const PLAY_STORE_URL =
 
 export const GITHUB_URL = "https://github.com/fefade"
 
-export const GTM_ID = "G-G2ESFNYD16"
+export const DEFAULT_LOCALE = "en"
+
+export const BASE_URL = "https://fefade.com"
