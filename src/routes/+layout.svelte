@@ -4,6 +4,8 @@
 	import icon180 from "$lib/assets/images/icon-180.png"
 	import { Provider } from "@fefade-ui/svelte"
 	import { CookieConsent } from "$lib/components/cookie-consent"
+	import { Gtm } from "$lib/components/gtm"
+	import { Constants } from "$lib"
 
 	let { children } = $props()
 </script>
@@ -12,27 +14,18 @@
 	<link rel="icon" href={icon32} />
 	<link rel="apple-touch-icon" sizes="180x180" href={icon180} />
 	<link rel="canonical" href={page.url.href} />
-
-	<script
-		async
-		src="https://www.googletagmanager.com/gtag/js?id=G-G2ESFNYD16"
-	></script>
-	<script>
-		window.dataLayer = window.dataLayer || []
-		function gtag() {
-			dataLayer.push(arguments)
-		}
-		gtag("js", new Date())
-
-		gtag("config", "G-G2ESFNYD16")
-	</script>
 </svelte:head>
 
 <Provider
 	defaultThemeMode="dark"
 	theme={{ colors: { dark: { bg: "#020202" } } }}
 >
-	<CookieConsent />
+	<Gtm id={Constants.GTM_ID}>
+		{#snippet children(loadGA)}
+			<CookieConsent onAccept={loadGA} />
+		{/snippet}
+	</Gtm>
+
 	{@render children?.()}
 </Provider>
 

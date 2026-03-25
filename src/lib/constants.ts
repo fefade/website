@@ -13,6 +13,8 @@ export const DEFAULT_LOCALE = "en"
 
 export const BASE_URL = "https://fefade.com"
 
+export const GTM_ID = "G-G2ESFNYD16"
+
 const PREFIX = "ff"
 
 export const COOKIE_CONSENT_FROM_STORAGE = {
