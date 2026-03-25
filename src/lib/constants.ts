@@ -12,3 +12,24 @@ export const GITHUB_URL = "https://github.com/fefade"
 export const DEFAULT_LOCALE = "en"
 
 export const BASE_URL = "https://fefade.com"
+
+const PREFIX = "ff"
+
+export const COOKIE_CONSENT_FROM_STORAGE = {
+	key: `${PREFIX}-cookie-consent`,
+	value: function () {
+		return localStorage.getItem(this.key)
+	},
+	accept: function () {
+		localStorage.setItem(this.key, JSON.stringify(true))
+	},
+	decline: function () {
+		localStorage.setItem(this.key, JSON.stringify(false))
+	},
+	accepted: function () {
+		return this.value() === "true"
+	},
+	declined: function () {
+		return this.value() === "false"
+	}
+}

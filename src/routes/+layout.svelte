@@ -3,6 +3,7 @@
 	import icon32 from "$lib/assets/images/icon-32.png"
 	import icon180 from "$lib/assets/images/icon-180.png"
 	import { Provider } from "@fefade-ui/svelte"
+	import { CookieConsent } from "$lib/components/cookie-consent"
 
 	let { children } = $props()
 </script>
@@ -31,6 +32,7 @@
 	defaultThemeMode="dark"
 	theme={{ colors: { dark: { bg: "#020202" } } }}
 >
+	<CookieConsent />
 	{@render children?.()}
 </Provider>
 
