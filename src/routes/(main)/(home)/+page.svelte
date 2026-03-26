@@ -4,6 +4,7 @@
 	import { onMount } from "svelte"
 	import { Button, Link } from "@fefade-ui/svelte"
 	import { withLocalePath } from "$lib/utils/withLocalePath"
+	import thumbnail from "$lib/assets/images/thumbnail.jpg"
 
 	let { data } = $props()
 
@@ -30,7 +31,14 @@
 </svelte:head>
 
 <section class="hero">
-	<video bind:this={videoEl} autoplay muted playsinline class="hero-video">
+	<video
+		bind:this={videoEl}
+		autoplay
+		muted
+		playsinline
+		class="hero-video"
+		poster={thumbnail}
+	>
 		<source src={videoFile} type="video/mp4" />
 	</video>
 
