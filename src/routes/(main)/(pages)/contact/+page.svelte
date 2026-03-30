@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { PUBLIC_TURNSTILE_SITE_KEY } from "$env/static/public"
 	import { Constants } from "$lib"
 	import { m } from "$lib/paraglide/messages.js"
 	import { Alert, Button, Textarea, TextField } from "@fefade-ui/svelte"
@@ -53,6 +54,12 @@
 <svelte:head>
 	<title>{m["pages.contact.title"]()} | {data.title}</title>
 	<meta name="description" content={m["pages.contact.introduction"]()} />
+	<link rel="preconnect" href="https://challenges.cloudflare.com" />
+	<script
+		src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+		async
+		defer
+	></script>
 </svelte:head>
 
 <div class="flex flex-col md:flex-row gap-10">
@@ -90,6 +97,12 @@
 
 		<strong>{m["common.message"]()}:</strong>
 		<Textarea id="message" name="message" style="min-height: 150px;" required />
+		<div
+			class="cf-turnstile"
+			data-sitekey={PUBLIC_TURNSTILE_SITE_KEY}
+			data-theme="dark"
+			data-size="normal"
+		></div>
 		<Button {isLoading} disabled={isLoading} type="submit">
 			{m["common.cta.send"]()}
 		</Button>

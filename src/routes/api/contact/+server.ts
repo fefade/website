@@ -1,5 +1,6 @@
 import { contactSchema } from "$lib/contact/schema"
 import sendMessage from "$lib/contact/sendMessage"
+import validateTurnstile from "$lib/validateTurnstile"
 import { withRateLimit } from "$lib/withRateLimit"
 import { json, type RequestHandler } from "@sveltejs/kit"
 import { z } from "zod"
@@ -28,4 +29,4 @@ const handler: RequestHandler = async ({ request }) => {
 	}
 }
 
-export const POST = withRateLimit(handler)
+export const POST = withRateLimit(validateTurnstile(handler))
