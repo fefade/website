@@ -46,6 +46,7 @@
 		} catch (error) {
 			messageError = (error as Error).message
 		} finally {
+			form.reset()
 			isLoading = false
 		}
 	}
