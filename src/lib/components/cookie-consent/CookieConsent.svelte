@@ -40,20 +40,23 @@
 	position="bottom"
 	style="padding: 0;"
 >
-	<Drawer.Content style="gap: 0.5rem;">
-		<h3>🍪 We use cookies</h3>
-		<p style="max-width: 500px;">
-			We use cookies to enhance your experience. By continuing to visit this
-			site you agree to our use of cookies. <Link
-				href={resolve("/cookie-policy")}
-				hover="underlineNone"
-			>
-				Read cookies policies.
-			</Link>
-		</p>
-		<div class="flex flex-col md:flex-row md:items-center gap-4">
+	<div class="flex flex-col md:flex-row gap-6" style="padding: 2rem;">
+		<div style="flex: 1;">
+			<h3>🍪 We use cookies</h3>
+			<p>
+				We use cookies to enhance your experience. By continuing to visit this
+				site you agree to our use of cookies. <Link
+					href={resolve("/cookie-policy")}
+					hover="underlineNone"
+				>
+					Read cookies policies.
+				</Link>
+			</p>
+		</div>
+
+		<div class="flex flex-col gap-4" style="flex: 1;">
 			<Button variant="outlined" onclick={decline}>Decline</Button>
 			<Button onclick={accept}>Accept</Button>
 		</div>
-	</Drawer.Content>
+	</div>
 </Drawer>

@@ -11,7 +11,7 @@
 		width: 60%;
 		margin: 0 auto;
 		padding: 6rem 0;
-		min-height: calc(100vh - 60px - 3rem);
+		min-height: 100vh;
 	}
 
 	@media screen and (max-width: 768px) {

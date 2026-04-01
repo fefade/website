@@ -1,26 +1,9 @@
 <script lang="ts">
-	import { Button, Link, Navbar } from "@fefade-ui/svelte"
+	import { Button, Navbar } from "@fefade-ui/svelte"
 	import { m } from "$lib/paraglide/messages.js"
-	import icon180 from "$lib/assets/images/icon-180.png?enhanced"
-	import { withLocalePath } from "$lib/utils/withLocalePath"
 	import { Constants } from "$lib"
+	import { Logo } from "$lib/components/logo"
 </script>
-
-{#snippet logo()}
-	<Link
-		title="fefade"
-		href={withLocalePath("/")}
-		style="
-		user-select: none; 
-		line-height: normal;
-		"
-	>
-		<enhanced:img alt="logo" src={icon180} width="48" height="48" />
-		<span class="hidden md:block" style="font-size: 20px; font-weight: 400;">
-			fefade
-		</span>
-	</Link>
-{/snippet}
 
 <nav>
 	<Navbar
@@ -35,7 +18,7 @@
 		z-index: 998;
 		"
 	>
-		{@render logo?.()}
+		<Logo />
 
 		<div class="flex justify-end items-center gap-2">
 			<Button

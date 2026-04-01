@@ -1,3 +1,5 @@
+export const APP_NAME = "Fefade"
+
 export const AUTH_URL = "https://auth.fefade.com"
 
 export const SUPPORT_EMAIL = "support@fefade.com"

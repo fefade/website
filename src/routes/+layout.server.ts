@@ -1,7 +1,8 @@
+import { Constants } from "$lib"
 import type { LayoutServerLoad } from "./$types"
 
 export const load = (async () => {
 	return {
-		title: "fefade"
+		title: Constants.APP_NAME
 	}
 }) satisfies LayoutServerLoad

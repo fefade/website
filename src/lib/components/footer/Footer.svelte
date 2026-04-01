@@ -3,7 +3,8 @@
 	import footerData from "$lib/data/footerData"
 	import { m } from "$lib/paraglide/messages"
 	import { getLocale, setLocale, type Locale } from "$lib/paraglide/runtime"
-	import { Link, Select, Separator, Text } from "@fefade-ui/svelte"
+	import { Link, Select, Separator } from "@fefade-ui/svelte"
+	import { Logo } from "$lib/components/logo"
 
 	const locale = getLocale()
 </script>
@@ -18,7 +19,7 @@
 			"
 	>
 		<div style="max-width: 250px;">
-			<Text as="span" style="font-size: 1.5em; font-weight: 400;">fefade</Text>
+			<Logo />
 			<p class="muted">{m["footer.description"]()}</p>
 
 			<div class="flex gap-4">
@@ -111,7 +112,7 @@
 					</Link>
 				{/each}
 			</nav>
-			<small>&copy; 2026 fefade</small>
+			<small>&copy; 2026 {Constants.APP_NAME}</small>
 		</div>
 	</div>
 </footer>
