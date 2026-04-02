@@ -40,7 +40,10 @@
 	position="bottom"
 	style="padding: 0;"
 >
-	<div class="flex flex-col md:flex-row gap-6" style="padding: 2rem;">
+	<div
+		class="flex flex-col md:flex-row gap-6 md:items-center"
+		style="padding: 2rem;"
+	>
 		<div style="flex: 1;">
 			<h3>🍪 We use cookies</h3>
 			<p>

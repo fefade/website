@@ -19,7 +19,7 @@
 			"
 	>
 		<div style="max-width: 250px;">
-			<Logo />
+			<Logo style="width: 32px; height: 32px;" />
 			<p class="muted">{m["footer.description"]()}</p>
 
 			<div class="flex gap-4">
