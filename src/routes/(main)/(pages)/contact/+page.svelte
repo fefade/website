@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { PUBLIC_TURNSTILE_SITE_KEY } from "$env/static/public"
-	import { Constants } from "$lib"
 	import { m } from "$lib/paraglide/messages.js"
 	import { Alert, Button, Textarea, TextField } from "@fefade-ui/svelte"
+	import { Constants } from "@fefade/common"
 
 	let { data } = $props()
 
@@ -76,7 +76,7 @@
 			<strong>{m["pages.contact.section_two.title"]()}</strong>
 			<br />
 			{@html m["pages.contact.section_two.description"]({
-				email: `<a title="email" href=${Constants.SUPPORT_EMAIL_URL}>${Constants.SUPPORT_EMAIL}</a>`
+				email: `<a title="email" href=${Constants.URLS.email}>${Constants.SUPPORT_EMAIL}</a>`
 			})}
 		</p>
 	</div>

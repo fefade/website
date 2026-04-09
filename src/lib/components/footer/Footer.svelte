@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Constants } from "$lib"
 	import footerData from "$lib/data/footerData"
 	import { m } from "$lib/paraglide/messages"
 	import { getLocale, setLocale, type Locale } from "$lib/paraglide/runtime"
 	import { Link, Select, Separator } from "@fefade-ui/svelte"
 	import { Logo } from "$lib/components/logo"
+	import { Constants } from "@fefade/common"
 
 	const locale = getLocale()
 </script>
@@ -23,11 +23,7 @@
 			<p class="muted">{m["footer.description"]()}</p>
 
 			<div class="flex gap-4">
-				<Link
-					title="email"
-					href={Constants.SUPPORT_EMAIL_URL}
-					style="min-width: 0;"
-				>
+				<Link title="email" href={Constants.URLS.email} style="min-width: 0;">
 					<svg
 						class="icon"
 						xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +39,7 @@
 				</Link>
 				<Link
 					title="google play"
-					href={Constants.PLAY_STORE_URL}
+					href={Constants.URLS.play_store}
 					target="_blank"
 					style="min-width: 0;"
 				>
@@ -62,7 +58,7 @@
 				</Link>
 				<Link
 					title="github"
-					href={Constants.GITHUB_URL}
+					href={Constants.URLS.github}
 					target="_blank"
 					style="min-width: 0;"
 				>
@@ -112,7 +108,7 @@
 					</Link>
 				{/each}
 			</nav>
-			<small>&copy; 2026 {Constants.APP_NAME}</small>
+			<small>&copy; 2026 {Constants.ORG_NAME}</small>
 		</div>
 	</div>
 </footer>

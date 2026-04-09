@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Button, Navbar } from "@fefade-ui/svelte"
 	import { m } from "$lib/paraglide/messages.js"
-	import { Constants } from "$lib"
 	import { Logo } from "$lib/components/logo"
+	import { Constants } from "@fefade/common"
 </script>
 
 <nav>
@@ -24,7 +24,7 @@
 			<Button
 				size="md"
 				title={m["common.cta.sign_in"]()}
-				href={Constants.AUTH_URL}
+				href={Constants.ORG_NAME}
 			>
 				{m["common.cta.sign_in"]()}
 			</Button>

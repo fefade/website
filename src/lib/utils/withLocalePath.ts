@@ -1,5 +1,5 @@
-import { Constants } from "$lib"
 import { getLocale } from "$lib/paraglide/runtime"
+import { Constants } from "@fefade/common"
 
 type Options = {
 	locale?: string

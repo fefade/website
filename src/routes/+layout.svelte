@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/state"
-	import icon32 from "$lib/assets/images/icon-32.png"
-	import icon180 from "$lib/assets/images/icon-180.png"
+	import icon32 from "@fefade/common/images/icon-32.png"
+	import icon180 from "@fefade/common/images/icon-180.png"
 	import { Provider } from "@fefade-ui/svelte"
 	import { CookieConsent } from "$lib/components/cookie-consent"
 	import { Gtm } from "$lib/components/gtm"

@@ -1,4 +1,4 @@
-import { Constants } from "$lib"
+import { Constants } from "@fefade/common"
 import { locales } from "$lib/paraglide/runtime"
 
 const ROUTES = [
@@ -18,7 +18,7 @@ function buildAlternateLinks(route: string) {
 		.map((locale) => {
 			const path = buildPath(route, locale)
 
-			return `<xhtml:link rel="alternate" hreflang="${locale}" href="${Constants.BASE_URL}${path}" />`
+			return `<xhtml:link rel="alternate" hreflang="${locale}" href="${Constants.URLS.base}${path}" />`
 		})
 		.join("\n")
 }
@@ -29,7 +29,7 @@ function buildUrlEntry(route: string, locale: string) {
 
 	return `
 	<url>
-		<loc>${Constants.BASE_URL}${path}</loc>
+		<loc>${Constants.URLS.base}${path}</loc>
 		${alternates}
 	</url>`.trim()
 }

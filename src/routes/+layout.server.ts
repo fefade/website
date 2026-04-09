@@ -1,8 +1,8 @@
-import { Constants } from "$lib"
+import { Constants } from "@fefade/common"
 import type { LayoutServerLoad } from "./$types"
 
 export const load = (async () => {
 	return {
-		title: Constants.APP_NAME
+		title: Constants.ORG_NAME
 	}
 }) satisfies LayoutServerLoad

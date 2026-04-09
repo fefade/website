@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { withLocalePath } from "$lib/utils/withLocalePath"
 	import { Link } from "@fefade-ui/svelte"
-	import icon180 from "$lib/assets/images/icon-180.png?enhanced"
+	import { Constants } from "@fefade/common"
+	import icon180 from "@fefade/common/images/icon-180.png?enhanced"
 	import type { Snippet } from "svelte"
 	import type { HTMLImgAttributes } from "svelte/elements"
-	import { Constants } from "$lib"
 
 	interface Props extends HTMLImgAttributes {
 		children?: Snippet<[]>
@@ -14,7 +14,7 @@
 </script>
 
 <Link
-	title={Constants.APP_NAME}
+	title={Constants.ORG_NAME}
 	href={withLocalePath("/")}
 	style="
 	user-select: none; 
