@@ -3,7 +3,7 @@ import { Constants } from "@fefade/common"
 export const GTM_ID = "G-G2ESFNYD16"
 
 export const COOKIE_CONSENT_FROM_STORAGE = {
-	key: `${Constants.PREFIX}-cookie-consent`,
+	key: `${Constants.ACRONYM}-cookie-consent`,
 	value: function () {
 		return localStorage.getItem(this.key)
 	},
