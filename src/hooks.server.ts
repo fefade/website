@@ -1,10 +1,6 @@
 import type { Handle } from "@sveltejs/kit"
 import { paraglideMiddleware } from "$lib/paraglide/server"
-
-function normalizeLang(lang: string) {
-	const [l, r] = lang.split("-")
-	return r ? `${l.toLowerCase()}-${r.toUpperCase()}` : l.toLowerCase()
-}
+import { normalizeLang } from "@fefade/common"
 
 const handleParaglide: Handle = ({ event, resolve }) =>
 	paraglideMiddleware(event.request, ({ request, locale }) => {

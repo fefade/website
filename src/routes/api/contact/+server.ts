@@ -1,8 +1,9 @@
+import { env } from "$env/dynamic/private"
 import { contactSchema } from "$lib/contact/schema"
 import sendMessage from "$lib/contact/sendMessage"
-import validateTurnstile from "$lib/validateTurnstile"
-import { withRateLimit } from "$lib/withRateLimit"
+import { withRateLimit, validateTurnstile, handleError } from "@fefade/common"
 import { json, type RequestHandler } from "@sveltejs/kit"
+import { RateLimiterMemory } from "rate-limiter-flexible"
 import { z } from "zod"
 
 const handler: RequestHandler = async ({ request }) => {
@@ -20,13 +21,16 @@ const handler: RequestHandler = async ({ request }) => {
 		return new Response(undefined, { status: 200 })
 	} catch (err) {
 		console.error(err)
-
-		if (err instanceof z.ZodError) {
-			return json({ error: err.issues[0].message }, { status: 400 })
-		}
-
-		return json({ error: "Internal server error" }, { status: 500 })
+		const parsedError = handleError(err)
+		return json({ error: parsedError.message }, { status: parsedError.status })
 	}
 }
 
-export const POST = withRateLimit(validateTurnstile(handler))
+export const POST = withRateLimit(
+	validateTurnstile(handler, env.TURNSTILE_SECRET_KEY),
+	new RateLimiterMemory({
+		points: 3,
+		duration: 60 * 60,
+		blockDuration: 30 * 60
+	})
+)

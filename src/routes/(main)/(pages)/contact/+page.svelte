@@ -44,6 +44,7 @@
 			sent = true
 			messageError = undefined
 		} catch (error) {
+			sent = false
 			messageError = (error as Error).message
 		} finally {
 			form.reset()
