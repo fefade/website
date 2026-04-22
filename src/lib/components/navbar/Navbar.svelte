@@ -24,7 +24,7 @@
 			<Button
 				size="md"
 				title={m["common.cta.sign_in"]()}
-				href={Constants.ORG_NAME}
+				href={Constants.URLS.auth}
 			>
 				{m["common.cta.sign_in"]()}
 			</Button>
