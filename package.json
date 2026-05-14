@@ -16,7 +16,7 @@
 	"dependencies": {
 		"@fefade-ui/core": "^0.0.8",
 		"@fefade-ui/svelte": "^0.0.8",
-		"@fefade/common": "^1.0.6",
+		"@fefade/common": "^1.0.8",
 		"@inlang/paraglide-js": "^2.15.0",
 		"handlebars": "^4.7.8",
 		"nodemailer": "^8.0.5",
@@ -47,7 +47,7 @@
 	},
 	"overrides": {
 		"@inlang/paraglide-js": {
-			"kysely": "0.28.14"
+			"kysely": "0.29.0"
 		},
 		"cookie": "1.1.1"
 	}

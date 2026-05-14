@@ -19,12 +19,17 @@
 		const email = formData.get("email")?.toString() ?? ""
 		const name = formData.get("name")?.toString() ?? ""
 		const message = formData.get("message")?.toString() ?? ""
+		const token = formData.get("cf-turnstile-response")?.toString()
 
 		try {
 			isLoading = true
 
 			if (!email || !name || !message) {
-				throw new Error("Fill in the required fields.")
+				throw new Error("Fill in the required fields")
+			}
+
+			if (!token) {
+				throw new Error("Invalid captcha")
 			}
 
 			const response = await fetch("/api/contact", {
@@ -32,7 +37,8 @@
 				body: JSON.stringify({
 					email,
 					name,
-					message
+					message,
+					"cf-turnstile-response": token
 				})
 			})
 
