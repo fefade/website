@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { m } from "$lib/paraglide/messages.js"
 	import videoFile from "$lib/assets/videos/intro.mp4"
+	import thumb from "$lib/assets/images/thumb.jpg"
 	import { onMount } from "svelte"
 	import { Button, Link } from "@fefade-ui/svelte"
 	import { withLocalePath } from "$lib/utils/withLocalePath"
-	import thumbnail from "$lib/assets/images/thumbnail.jpg"
 
 	let { data } = $props()
 
@@ -37,7 +37,7 @@
 		muted
 		playsinline
 		class="hero-video"
-		poster={thumbnail}
+		poster={thumb}
 	>
 		<source src={videoFile} type="video/mp4" />
 	</video>

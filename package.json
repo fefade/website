@@ -14,12 +14,12 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
-		"@fefade-ui/core": "^0.0.8",
-		"@fefade-ui/svelte": "^0.0.8",
-		"@fefade/common": "^1.0.8",
+		"@fefade-ui/core": "^0.0.9",
+		"@fefade-ui/svelte": "^0.0.9",
+		"@fefade/common": "^1.0.10",
 		"@inlang/paraglide-js": "^2.15.0",
 		"handlebars": "^4.7.8",
-		"nodemailer": "^8.0.5",
+		"nodemailer": "^9.0.3",
 		"rate-limiter-flexible": "^10.0.1",
 		"zod": "^4.3.6"
 	},
@@ -49,6 +49,10 @@
 		"@inlang/paraglide-js": {
 			"kysely": "0.29.0"
 		},
-		"cookie": "1.1.1"
+		"cookie": "1.1.1",
+		"sharp": "0.35.3"
+	},
+	"allowScripts": {
+		"@fefade-ui/core@0.0.9": true
 	}
 }
