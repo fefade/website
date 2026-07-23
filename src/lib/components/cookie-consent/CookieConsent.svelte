@@ -28,8 +28,20 @@
 	}
 
 	onMount(() => {
-		if (!cookieConsentStorage.value()) {
+		if (cookieConsentStorage.value()) return
+
+		const showDrawer = () => {
 			isOpen = true
+			window.removeEventListener("scroll", showDrawer)
+			window.removeEventListener("touchmove", showDrawer)
+		}
+
+		window.addEventListener("scroll", showDrawer, { passive: true })
+		window.addEventListener("touchmove", showDrawer, { passive: true })
+
+		return () => {
+			window.removeEventListener("scroll", showDrawer)
+			window.removeEventListener("touchmove", showDrawer)
 		}
 	})
 </script>
