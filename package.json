@@ -14,8 +14,8 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
-		"@fefade-ui/core": "^0.0.9",
-		"@fefade-ui/svelte": "^0.0.9",
+		"@fefade-ui/core": "^0.0.13",
+		"@fefade-ui/svelte": "^0.0.14",
 		"@fefade/common": "^1.0.10",
 		"@inlang/paraglide-js": "^2.15.0",
 		"handlebars": "^4.7.8",

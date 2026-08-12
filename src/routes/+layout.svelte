@@ -2,7 +2,7 @@
 	import { page } from "$app/state"
 	import icon32 from "@fefade/common/images/icon-32.png"
 	import icon180 from "@fefade/common/images/icon-180.png"
-	import { Provider } from "@fefade-ui/svelte"
+	import { Provider, StyleUtil } from "@fefade-ui/svelte"
 	import { CookieConsent } from "$lib/components/cookie-consent"
 	import { Gtm } from "$lib/components/gtm"
 	import { Constants } from "$lib"
@@ -20,6 +20,7 @@
 	defaultThemeMode="dark"
 	theme={{ colors: { dark: { bg: "#020202" } } }}
 >
+	<StyleUtil />
 	<Gtm id={Constants.GTM_ID}>
 		{#snippet children(loadGA)}
 			<CookieConsent onAccept={loadGA} />

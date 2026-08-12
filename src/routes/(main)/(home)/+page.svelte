@@ -17,6 +17,7 @@
 
 				if (el.currentTime >= 7.6) {
 					el.style.opacity = "0.3"
+					el.style.filter = "blur(5px)"
 					el.pause()
 				}
 			})
@@ -132,7 +133,9 @@
 		height: 100%;
 		object-fit: cover;
 		z-index: -2;
-		transition: opacity 0.5s ease-out;
+		transition:
+			opacity 0.5s ease-out,
+			filter 0.5s ease-out;
 
 		-webkit-mask-image: linear-gradient(
 			to right,
