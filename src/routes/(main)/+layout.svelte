@@ -8,7 +8,16 @@
 	} from "$lib/paraglide/runtime"
 	import { withLocalePath } from "$lib/utils/withLocalePath"
 	import { Constants } from "@fefade/common"
-	import icon180 from "@fefade/common/images/icon-180.png"
+	import icon180 from "@fefade/common/images/icon-180.png?enhanced"
+	import {
+		Check as CheckIcon,
+		ChevronDown as ChevronDownIcon,
+		Envelope as EnvelopeIcon,
+		Github as GithubIcon,
+		Globe2 as Globe2Icon,
+		GooglePlay as GooglePlayIcon
+		// List as ListIcon
+	} from "svelte-bootstrap-icons"
 
 	let { children } = $props()
 
@@ -20,11 +29,11 @@
 		setLocale(locale)
 	}
 
-	const getLanguageName = $derived((locale: string) =>
+	const getLanguageName = (locale: string) =>
 		new Intl.DisplayNames(locales, {
 			type: "language"
 		}).of(locale)
-	)
+
 	const handleClickOutside = (event: MouseEvent) => {
 		if (!selectElement?.contains(event.target as Node)) {
 			isOpen = false
@@ -50,17 +59,21 @@
 			<div class="flex h-10 items-center justify-between">
 				<!-- BRAND -->
 				<a
+					class="flex min-w-0 items-center gap-2 text-white transition-opacity duration-200 hover:opacity-80"
 					href={withLocalePath("/")}
 					title={Constants.ORG_NAME}
-					class="flex items-center gap-2 text-white transition-opacity duration-200 hover:opacity-80"
 				>
-					<img
+					<enhanced:img
 						alt="logo"
 						src={icon180}
 						width="48"
 						height="48"
+						class="h-9 w-9 shrink-0 sm:h-12 sm:w-12"
 					/>
-					<span class="font-medium">{Constants.ORG_NAME}</span>
+
+					<span class="min-w-0 truncate text-sm font-medium sm:text-base">
+						{Constants.ORG_NAME}
+					</span>
 				</a>
 
 				<!-- NAV DESKTOP -->
@@ -95,10 +108,10 @@
 				</nav> -->
 
 				<!-- ACTIONS DESKTOP -->
-				<div class="hidden items-center gap-2 md:flex">
+				<div class="flex items-center gap-2">
 					<a
 						href={withLocalePath("/contact")}
-						class="rounded-xl border border-gray-700 px-3 py-1.5 text-sm text-white/90 transition-all duration-200 hover:border-gray-400 hover:bg-white/5 hover:text-white"
+						class="hidden rounded-xl border border-gray-700 px-3 py-1.5 text-sm text-white/90 transition-all duration-200 hover:border-gray-400 hover:bg-white/5 hover:text-white md:flex"
 					>
 						{m["common.contact"]()}
 					</a>
@@ -119,10 +132,7 @@
 					aria-expanded="false"
 					class="flex h-10 w-10 items-center justify-center rounded-xl border border-gray-700 text-white transition-all duration-200 hover:bg-white/10 md:hidden"
 				>
-					<i
-						id="menu-icon"
-						class="bi bi-list text-xl transition-transform duration-300"
-					></i>
+					<ListIcon class="text-xl transition-transform duration-300" />
 				</button> -->
 			</div>
 		</div>
@@ -226,32 +236,37 @@
 				<div class="w-full lg:max-w-lg lg:flex-1">
 					<a
 						href={withLocalePath("/")}
-						class="group flex w-fit items-center gap-2 text-white"
+						class="group flex w-fit max-w-full min-w-0 items-center gap-2 text-white"
 						aria-label="Home"
 					>
 						<span
-							class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-[#0d0e11] transition-transform duration-200 group-hover:rotate-[-8deg]"
+							class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white transition-transform duration-200 group-hover:rotate-[-8deg] sm:h-9 sm:w-9"
 						>
-							<img
+							<enhanced:img
 								alt="logo"
 								src={icon180}
 								width="48"
 								height="48"
+								class="h-6 w-6 object-contain sm:h-7 sm:w-7"
 							/>
 						</span>
 
-						<span class="text-sm font-semibold tracking-tight">
+						<span
+							class="min-w-0 truncate text-sm font-semibold tracking-tight text-white sm:text-base"
+						>
 							{Constants.ORG_NAME}
 						</span>
 					</a>
 
 					<h2
-						class="mt-6 max-w-md text-[clamp(1.75rem,5vw,2.25rem)] leading-tight font-medium tracking-tight text-white sm:mt-8"
+						class="mt-5 max-w-md text-[clamp(1.75rem,7vw,2.25rem)] leading-[1.1] font-medium tracking-tight text-white sm:mt-8"
 					>
 						{m["footer.title"]()}
 					</h2>
 
-					<p class="mt-3 max-w-sm text-sm leading-6 text-gray-500 sm:mt-4">
+					<p
+						class="mt-3 max-w-sm px-[0.4rem] text-sm leading-6 text-gray-400 sm:mt-4"
+					>
 						{m["footer.description"]()}
 					</p>
 				</div>
@@ -263,7 +278,7 @@
 					<!-- COMPANY -->
 					<div class="min-w-0">
 						<h3
-							class="text-xs font-medium tracking-wider text-gray-600 uppercase"
+							class="text-xs font-medium tracking-wider text-gray-400 uppercase"
 						>
 							Company
 						</h3>
@@ -281,13 +296,13 @@
 								</li>
 
 								<!-- <li>
-									<a
-										href="#about"
-										class="block w-fit text-sm text-gray-400 transition-colors duration-200 hover:text-white"
-									>
-										About
-									</a>
-								</li> -->
+								<a
+									href="#about"
+									class="block w-fit text-sm text-gray-400 transition-colors duration-200 hover:text-white"
+								>
+									About
+								</a>
+							</li> -->
 							</ul>
 						</nav>
 					</div>
@@ -295,7 +310,7 @@
 					<!-- LEGAL -->
 					<div class="min-w-0">
 						<h3
-							class="text-xs font-medium tracking-wider text-gray-600 uppercase"
+							class="text-xs font-medium tracking-wider text-gray-400 uppercase"
 						>
 							Legal
 						</h3>
@@ -338,7 +353,7 @@
 					<!-- CONNECT -->
 					<div class="col-span-2 min-w-0 sm:col-span-1">
 						<h3
-							class="text-xs font-medium tracking-wider text-gray-600 uppercase"
+							class="text-xs font-medium tracking-wider text-gray-400 uppercase"
 						>
 							Connect
 						</h3>
@@ -355,12 +370,9 @@
 									rel="noopener noreferrer"
 									aria-label="GitHub"
 									title="GitHub"
-									class="flex h-9 w-9 items-center justify-center rounded-lg border border-white/6 text-gray-500 transition-all duration-200 hover:border-white/10 hover:bg-white/4 hover:text-white sm:h-10 sm:w-10"
+									class="flex h-9 w-9 items-center justify-center rounded-lg border border-white/6 text-gray-400 transition-all duration-200 hover:border-white/10 hover:bg-white/4 hover:text-white sm:h-10 sm:w-10"
 								>
-									<i
-										class="bi bi-github text-base"
-										aria-hidden="true"
-									></i>
+									<GithubIcon />
 								</a>
 							</li>
 
@@ -370,12 +382,9 @@
 									href={Constants.URLS.email}
 									aria-label="Email"
 									title="Email"
-									class="flex h-9 w-9 items-center justify-center rounded-lg border border-white/6 text-gray-500 transition-all duration-200 hover:border-white/10 hover:bg-white/4 hover:text-white sm:h-10 sm:w-10"
+									class="flex h-9 w-9 items-center justify-center rounded-lg border border-white/6 text-gray-400 transition-all duration-200 hover:border-white/10 hover:bg-white/4 hover:text-white sm:h-10 sm:w-10"
 								>
-									<i
-										class="bi bi-envelope text-base"
-										aria-hidden="true"
-									></i>
+									<EnvelopeIcon />
 								</a>
 							</li>
 
@@ -387,12 +396,9 @@
 									rel="noopener noreferrer"
 									aria-label="Google Play"
 									title="Google Play"
-									class="flex h-9 w-9 items-center justify-center rounded-lg border border-white/6 text-gray-500 transition-all duration-200 hover:border-white/10 hover:bg-white/4 hover:text-white sm:h-10 sm:w-10"
+									class="flex h-9 w-9 items-center justify-center rounded-lg border border-white/6 text-gray-400 transition-all duration-200 hover:border-white/10 hover:bg-white/4 hover:text-white sm:h-10 sm:w-10"
 								>
-									<i
-										class="bi bi-google-play text-base"
-										aria-hidden="true"
-									></i>
+									<GooglePlayIcon />
 								</a>
 							</li>
 						</ul>
@@ -404,37 +410,51 @@
 			<div
 				class="mt-12 flex flex-col gap-5 border-t border-white/6 pt-6 sm:mt-16 sm:flex-row sm:items-center sm:justify-between"
 			>
-				<p class="text-xs text-gray-600">&#169; 2026 {Constants.ORG_NAME}</p>
+				<p class="text-xs text-gray-400">
+					&#169; 2026 {Constants.ORG_NAME}
+				</p>
 
 				<div
 					bind:this={selectElement}
-					class="relative"
+					class="relative w-fit max-w-full sm:shrink-0"
 				>
 					<button
 						type="button"
-						class="group flex w-fit cursor-pointer items-center gap-2 text-xs text-gray-500 transition-colors duration-200 hover:text-white"
+						class="group flex w-fit max-w-full cursor-pointer items-center gap-2 text-xs text-gray-400 transition-colors duration-200 hover:text-white"
 						aria-label="Change language"
 						aria-haspopup="listbox"
 						aria-expanded={isOpen}
 						onclick={() => (isOpen = !isOpen)}
 					>
-						<i
-							class="bi bi-globe2 text-sm"
+						<Globe2Icon
+							class="shrink-0 text-sm"
 							aria-hidden="true"
-						></i>
+						/>
 
-						<span>{getLanguageName(getLocale())}</span>
+						<span class="truncate">
+							{getLanguageName(getLocale())}
+						</span>
 
-						<i
-							class="bi bi-chevron-down text-[10px] text-gray-600 transition-transform duration-200 group-hover:text-gray-400"
-							class:rotate-180={isOpen}
-							aria-hidden="true"
-						></i>
+						<span class:rotate-180={isOpen}>
+							<ChevronDownIcon
+								class="shrink-0 text-[10px] text-gray-500 transition-transform duration-200 group-hover:text-gray-300"
+								aria-hidden="true"
+							/>
+						</span>
 					</button>
 
 					{#if isOpen}
 						<div
-							class="absolute right-0 bottom-full z-50 mb-2 min-w-36 overflow-hidden rounded-lg border border-white/10 bg-zinc-950 p-1 shadow-xl"
+							class="
+							absolute bottom-full left-0 z-50
+							mb-2
+							w-48 max-w-[calc(100vw-2rem)]
+							overflow-hidden rounded-lg
+							border border-white/10
+							bg-zinc-950 p-1
+							shadow-xl
+							sm:right-0 sm:left-auto
+						"
 							role="listbox"
 							aria-label="Languages"
 						>
@@ -443,18 +463,28 @@
 									type="button"
 									role="option"
 									aria-selected={getLocale() === locale}
-									class="flex w-full cursor-pointer items-center justify-between rounded-md px-3 py-2 text-left text-xs transition-colors hover:bg-white/5 hover:text-white"
+									class="
+									flex w-full min-w-0
+									cursor-pointer items-center justify-between
+									gap-3 rounded-md
+									px-3 py-2
+									text-left text-xs
+									transition-colors
+									hover:bg-white/5 hover:text-white
+								"
 									class:text-white={getLocale() === locale}
-									class:text-gray-500={getLocale() !== locale}
+									class:text-gray-400={getLocale() !== locale}
 									onclick={() => changeLocale(locale)}
 								>
-									<span>{getLanguageName(locale)}</span>
+									<span class="min-w-0 truncate">
+										{getLanguageName(locale)}
+									</span>
 
 									{#if getLocale() === locale}
-										<i
-											class="bi bi-check text-xs"
+										<CheckIcon
+											class="shrink-0 text-xs"
 											aria-hidden="true"
-										></i>
+										/>
 									{/if}
 								</button>
 							{/each}
