@@ -265,7 +265,7 @@
 					</h2>
 
 					<p
-						class="mt-3 max-w-sm px-[0.4rem] text-sm leading-6 text-gray-400 sm:mt-4"
+						class="mt-3 max-w-sm text-sm leading-6 text-gray-400 sm:mt-4"
 					>
 						{m["footer.description"]()}
 					</p>
