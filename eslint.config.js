@@ -32,7 +32,8 @@ export default defineConfig(
 			"@typescript-eslint/no-explicit-any": "off",
 			"@typescript-eslint/ban-ts-comment": "off",
 			"prefer-const": "off",
-			"no-control-regex": "off"
+			"no-control-regex": "off",
+			"svelte/no-navigation-without-resolve": "off"
 		}
 	},
 	{

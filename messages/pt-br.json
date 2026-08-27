@@ -202,6 +202,7 @@
 		}
 	},
 	"footer": {
-		"description": "Transforme suas ideias em valor."
+		"title": "Transforme suas ideias em valor.",
+		"description": "Ferramentas para transformar planos em ação."
 	}
 }

@@ -2,21 +2,8 @@
 	let { children } = $props()
 </script>
 
-<div class="flex flex-col justify-center content">
+<div
+	class="mx-auto flex min-h-screen w-[90%] flex-col justify-center py-24 md:w-[60%]"
+>
 	{@render children()}
 </div>
-
-<style>
-	.content {
-		width: 60%;
-		margin: 0 auto;
-		padding: 6rem 0;
-		min-height: 100vh;
-	}
-
-	@media screen and (max-width: 768px) {
-		.content {
-			width: 90%;
-		}
-	}
-</style>

@@ -1,3 +1,4 @@
+import type { resolve } from "$app/paths"
 import { getLocale } from "$lib/paraglide/runtime"
 import { Constants } from "@fefade/common"
 
@@ -6,8 +7,10 @@ type Options = {
 	defaultLocale?: string
 }
 
-export function withLocalePath(
-	path: string,
+type Path = Parameters<typeof resolve>[0]
+
+export function withLocalePath<P extends Path>(
+	path: P,
 	{
 		locale = getLocale(),
 		defaultLocale = Constants.DEFAULT_LOCALE
@@ -19,24 +22,27 @@ export function withLocalePath(
 
 	normalizedPath = normalizedPath.replace(/\/{2,}/g, "/")
 
+	const defaultLocalePrefix = `/${defaultLocale}`
+
 	if (
-		normalizedPath === `/${defaultLocale}` ||
-		normalizedPath.startsWith(`/${defaultLocale}/`)
+		normalizedPath === defaultLocalePrefix ||
+		normalizedPath.startsWith(`${defaultLocalePrefix}/`)
 	) {
-		normalizedPath =
-			normalizedPath.replace(new RegExp(`^/${defaultLocale}`), "") || "/"
+		normalizedPath = normalizedPath.slice(defaultLocalePrefix.length) || "/"
 	}
 
 	if (!locale || locale === defaultLocale) {
 		return normalizedPath
 	}
 
+	const localePrefix = `/${locale}`
+
 	if (
-		normalizedPath === `/${locale}` ||
-		normalizedPath.startsWith(`/${locale}/`)
+		normalizedPath === localePrefix ||
+		normalizedPath.startsWith(`${localePrefix}/`)
 	) {
 		return normalizedPath
 	}
 
-	return `/${locale}${normalizedPath}`
+	return `${localePrefix}${normalizedPath}`
 }

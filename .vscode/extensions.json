@@ -3,6 +3,7 @@
 		"esbenp.prettier-vscode",
 		"svelte.svelte-vscode",
 		"dbaeumer.vscode-eslint",
-		"vscode-icons-team.vscode-icons"
+		"vscode-icons-team.vscode-icons",
+		"timsexperiments.vscode-tailwindcss"
 	]
 }

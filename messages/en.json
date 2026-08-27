@@ -202,6 +202,7 @@
 		}
 	},
 	"footer": {
-		"description": "Turn your ideas into value."
+		"title": "Turn your ideas into value.",
+		"description": "Tools to turn plans into action."
 	}
 }
