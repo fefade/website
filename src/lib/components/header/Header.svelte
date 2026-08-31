@@ -70,7 +70,7 @@
 					class="h-9 w-9 shrink-0 sm:h-12 sm:w-12"
 				/>
 
-				<span class="min-w-0 truncate text-sm font-medium sm:text-base">
+				<span class="hidden min-w-0 truncate text-sm font-medium sm:text-base">
 					{Constants.ORG_NAME}
 				</span>
 			</a>

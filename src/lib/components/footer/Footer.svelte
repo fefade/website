@@ -65,7 +65,7 @@
 					</span>
 
 					<span
-						class="min-w-0 truncate text-sm font-semibold tracking-tight text-white sm:text-base"
+						class="hidden min-w-0 truncate text-sm font-semibold tracking-tight text-white sm:text-base"
 					>
 						{Constants.ORG_NAME}
 					</span>
