@@ -58,6 +58,17 @@
 			"source": "/image-to-text",
 			"destination": "/",
 			"permanent": true
+		},
+		{
+			"source": "/:path*",
+			"has": [
+				{
+					"type": "host",
+					"value": "ui.fefade.com"
+				}
+			],
+			"destination": "https://fefade.com/",
+			"permanent": true
 		}
 	]
 }

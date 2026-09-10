@@ -19,5 +19,8 @@
 	},
 	"eslint.validate": ["svelte", "typescript", "javascript"],
 	"editor.formatOnSave": true,
-	"prettier.enable": true
+	"prettier.enable": true,
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	}
 }
