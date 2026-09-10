@@ -60,6 +60,17 @@
 			"permanent": true
 		},
 		{
+			"source": "/",
+			"has": [
+				{
+					"type": "host",
+					"value": "ui.fefade.com"
+				}
+			],
+			"destination": "https://fefade.com/",
+			"permanent": true
+		},
+		{
 			"source": "/:path*",
 			"has": [
 				{
@@ -68,6 +79,28 @@
 				}
 			],
 			"destination": "https://fefade.com/",
+			"permanent": true
+		},
+		{
+			"source": "/",
+			"has": [
+				{
+					"type": "host",
+					"value": "store.fefade.com"
+				}
+			],
+			"destination": "https://s.shopee.com.br/1gIVewclXY",
+			"permanent": true
+		},
+		{
+			"source": "/:path*",
+			"has": [
+				{
+					"type": "host",
+					"value": "store.fefade.com"
+				}
+			],
+			"destination": "https://s.shopee.com.br/1gIVewclXY/",
 			"permanent": true
 		}
 	]
