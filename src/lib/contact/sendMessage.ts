@@ -7,10 +7,10 @@ export default async function (data: ContactType) {
 	const html = await renderTemplate(data)
 
 	return transporter.sendMail({
-		from: `"${data.name}" <${env.EMAIL_USER}>`,
+		from: `"${data.name}" <${env.USER_EMAIL}>`,
 		replyTo: data.email,
-		to: env.EMAIL_USER,
-		subject: "New website contact",
+		to: env.CONTACT_EMAIL,
+		subject: `Website Contact: ${data.name}`,
 		html
 	})
 }
