@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PUBLIC_TURNSTILE_SITE_KEY } from "$env/static/public"
+	import { PUBLIC_TURNSTILE_WEBSITE_KEY } from "$env/static/public"
 	import { m } from "$lib/paraglide/messages.js"
 	import { Constants } from "@fefade/common"
 	import { ArrowRight as ArrowRightIcon } from "svelte-bootstrap-icons"
@@ -178,24 +178,28 @@
 		{:else if sent}
 			<div
 				role="status"
-				class="flex min-w-0 items-start gap-3 rounded-xl border border-white/10 bg-white/4 px-3 py-3 text-sm text-white/80 sm:px-4"
+				class="flex min-w-0 items-start gap-3 rounded-xl border border-emerald-400/20 bg-emerald-400/8 px-3 py-3 text-sm text-emerald-100 shadow-sm shadow-emerald-950/20 sm:px-4"
 			>
-				<svg
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.8"
-					class="mt-0.5 size-4 shrink-0"
+				<div
+					class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-emerald-400/15 text-emerald-400"
 					aria-hidden="true"
 				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="m5 12 4 4L19 6"
-					/>
-				</svg>
+					<svg
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						class="size-3.5"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="m5 12 4 4L19 6"
+						/>
+					</svg>
+				</div>
 
-				<span class="min-w-0">
+				<span class="min-w-0 pt-0.5 text-emerald-100/90">
 					{m["pages.contact.sent"]()}
 				</span>
 			</div>
@@ -257,7 +261,7 @@
 		<div class="w-full min-w-0 overflow-hidden">
 			<div
 				class="cf-turnstile max-w-full"
-				data-sitekey={PUBLIC_TURNSTILE_SITE_KEY}
+				data-sitekey={PUBLIC_TURNSTILE_WEBSITE_KEY}
 				data-theme="dark"
 				data-size="normal"
 			></div>
